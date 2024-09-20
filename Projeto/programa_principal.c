@@ -3,20 +3,22 @@
 //funções principais
 void tela_principal(void);
 void tela_sobre(void);
+void tela_equipe(void);
 
 //programa principal
 int main(void){
     tela_principal();
     tela_sobre();
+    tela_equipe();
 }
 
 
 void tela_principal(void){
     printf("\n");
     printf("═══════════════════════════════════════════════════════════\n");
-    printf("═══                SIG-Building                      ══════\n");
+    printf("═══                SIG-Building                       ═════\n");
     printf("═══════════════════════════════════════════════════════════\n");
-    printf("═══ Sistema de gestão de material de construção      ══════\n");
+    printf("═══    Sistema de gestão de material de construção    ═════\n");
     printf("═══════════════════════════════════════════════════════════\n");
     printf("═══    1-venda                                        ═════\n");
     printf("═══    2-produto                                      ═════\n");
@@ -28,7 +30,7 @@ void tela_principal(void){
     printf("═══                                                   ═════\n");
     printf("═══                                                   ═════\n");
     printf("═══════════════════════════════════════════════════════════\n");
-    
+
 }
 
 void tela_sobre(void){
@@ -47,4 +49,14 @@ void tela_sobre(void){
     printf("═══   relatorios                                      ═════\n");
     printf("═══════════════════════════════════════════════════════════\n");
 
+}
+
+void tela_equipe(void){
+    printf("\n");
+    printf("═══════════════════════════════════════════════════════════\n");
+    printf("═══            Equipe de desenvolvimento              ═════\n");
+    printf("═══════════════════════════════════════════════════════════\n");
+    printf("═══            Leandro Sergio Da Silva                ═════\n");
+    printf("═══            Arthur De Medeiros Dantas              ═════\n");
+    printf("═══════════════════════════════════════════════════════════\n");
 }
