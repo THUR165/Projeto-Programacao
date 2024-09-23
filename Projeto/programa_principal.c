@@ -27,8 +27,6 @@ void tela_principal(void){
     printf("═══    5-Relatorio                                    ═════\n");
     printf("═══    6-sobre o programa                             ═════\n");
     printf("═══    7-informaçoes dos desenvolvedores              ═════\n");
-    printf("═══                                                   ═════\n");
-    printf("═══                                                   ═════\n");
     printf("═══════════════════════════════════════════════════════════\n");
 
 }
