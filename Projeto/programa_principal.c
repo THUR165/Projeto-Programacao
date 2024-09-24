@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <iostream>
 
 //funções principais
 void tela_principal(void);
