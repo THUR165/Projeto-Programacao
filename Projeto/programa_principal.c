@@ -1,9 +1,37 @@
 #include <stdio.h>
 
+
+/*
+#include <stdio.h>
+char nome[21];
+float alt;
+float peso;
+float imc;
+
+void main(void){   
+    printf("Qual o seu nome? ");
+    scanf("%c", &nome);
+    printf("Digite sua Altura: ");
+    scanf("%f",alt);
+    printf("Qual o seu peso? ");
+    scanf("%f",&peso);
+
+    printf("Seu imc é: %.f",imc);
+    
+    
+// peso / altura**2
+}
+
+
+*/
+
+
+
 //funções principais
 void tela_principal(void);
 void tela_sobre(void);
 void tela_equipe(void);
+
 
 //programa principal
 int main(void){
@@ -14,22 +42,44 @@ int main(void){
 
 
 void tela_principal(void){
+    int resp;
     printf("\n");
     printf("═══════════════════════════════════════════════════════════\n");
     printf("═══                SIG-Building                       ═════\n");
     printf("═══════════════════════════════════════════════════════════\n");
     printf("═══    Sistema de gestão de material de construção    ═════\n");
     printf("═══════════════════════════════════════════════════════════\n");
-    printf("═══    1-venda                                        ═════\n");
-    printf("═══    2-produto                                      ═════\n");
-    printf("═══    3-cliente                                      ═════\n");
-    printf("═══    4-funcionarios                                 ═════\n");
-    printf("═══    5-Relatorio                                    ═════\n");
-    printf("═══    6-sobre o programa                             ═════\n");
-    printf("═══    7-informaçoes dos desenvolvedores              ═════\n");
+    printf("═══                [1] - Clientes                     ═════\n");
+    printf("═══                [2] - Funcionário                  ═════\n");
+    scanf("%i", &resp);
     printf("═══════════════════════════════════════════════════════════\n");
-
+    if (resp == 1 ){
+        printf(" Modulo Clientes \n"); //função fazer compras
+    } else if (resp == 2){
+        printf("Modulo Funcionário \n"); //function de cadastrar cliente
+    } else{
+        printf("Resposta inválida. \n");
+    }
+    
 }
+
+
+//void clientes(void){
+    //printf("Modulo Clientes \n");
+    /*
+    char resp[1];
+    printf("Já possui cadastro de Cliente? S/N: \n");
+    scanf("%c", &resp);
+    if (resp == "S" || resp == "s"){
+        printf("Fazer Compras"); //função fazer compras
+    } else if (resp == "N"  || resp == "n"){
+        printf("Cadastramento de Cliente\n"); //function de cadastrar cliente
+    } else{
+        printf("Resposta inválida. \n");
+    }
+    
+     */
+    
 
 void tela_sobre(void){
     printf("\n");
