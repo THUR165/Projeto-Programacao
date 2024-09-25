@@ -33,6 +33,7 @@ void tela_sobre(void);
 void tela_equipe(void);
 void modulo_funcionario(void);
 void tela_produto(void);
+void tela_funcionario(void);
 
 
 //programa principal
@@ -42,6 +43,7 @@ int main(void){
     tela_equipe();
     modulo_funcionario();
     tela_produto();
+    tela_funcionario();
 }
 
 
@@ -134,5 +136,20 @@ void tela_produto(void){
     printf("═══════         3-modificar produto                  ══════\n");
     printf("═══════         4-excluir produto                    ══════\n");
     printf("═══════         0- sair                              ══════\n");
+    printf("═══════════════════════════════════════════════════════════\n");
+}
+
+void tela_funcionario(void){
+    printf("\n");
+    printf("═══════════════════════════════════════════════════════════\n");
+    printf("═══════                Funcionario                   ══════\n");
+    printf("═══════════════════════════════════════════════════════════\n");
+    printf("═══════         1-cadastrar Funcionario              ══════\n");
+    printf("═══════         2-Exibir Funcionarios                ══════\n");
+    printf("═══════         3-modificar Funcionario              ══════\n");
+    printf("═══════         4-Excluir Funcionario                ══════\n");
+    printf("═══════         0-sair                               ══════\n");
+    printf("═══════════════════════════════════════════════════════════\n");
+    printf("═══════════════════════════════════════════════════════════\n");
     printf("═══════════════════════════════════════════════════════════\n");
 }
