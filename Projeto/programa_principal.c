@@ -31,6 +31,7 @@ void main(void){
 void tela_principal(void);
 void tela_sobre(void);
 void tela_equipe(void);
+void modulo_funcionario(void);
 
 
 //programa principal
@@ -38,6 +39,7 @@ int main(void){
     tela_principal();
     tela_sobre();
     tela_equipe();
+    modulo_funcionario();
 }
 
 
@@ -106,5 +108,16 @@ void tela_equipe(void){
     printf("═══════════════════════════════════════════════════════════\n");
     printf("═══            Leandro Sergio Da Silva                ═════\n");
     printf("═══            Arthur De Medeiros Dantas              ═════\n");
+    printf("═══════════════════════════════════════════════════════════\n");
+}
+
+void modulo_funcionario(void){
+    printf("\n");
+    printf("═══════════════════════════════════════════════════════════\n");
+    printf("═══════            Modulo Funcionario                ══════\n");
+    printf("═══════════════════════════════════════════════════════════\n");
+    printf("═══════         1-produtos                           ══════\n");
+    printf("═══════         2-Funcionarios                       ══════\n");
+    printf("═══════         0-sair                               ══════\n");
     printf("═══════════════════════════════════════════════════════════\n");
 }
