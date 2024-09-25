@@ -32,6 +32,7 @@ void tela_principal(void);
 void tela_sobre(void);
 void tela_equipe(void);
 void modulo_funcionario(void);
+void tela_produto(void);
 
 
 //programa principal
@@ -40,6 +41,7 @@ int main(void){
     tela_sobre();
     tela_equipe();
     modulo_funcionario();
+    tela_produto();
 }
 
 
@@ -119,5 +121,18 @@ void modulo_funcionario(void){
     printf("═══════         1-produtos                           ══════\n");
     printf("═══════         2-Funcionarios                       ══════\n");
     printf("═══════         0-sair                               ══════\n");
+    printf("═══════════════════════════════════════════════════════════\n");
+}
+
+void tela_produto(void){
+    printf("\n");
+    printf("═══════════════════════════════════════════════════════════\n");
+    printf("═══════                Produto                       ══════\n");
+    printf("═══════════════════════════════════════════════════════════\n");
+    printf("═══════         1-cadastrar produto                  ══════\n");
+    printf("═══════         2-exibir produto                     ══════\n");
+    printf("═══════         3-modificar produto                  ══════\n");
+    printf("═══════         4-excluir produto                    ══════\n");
+    printf("═══════         0- sair                              ══════\n");
     printf("═══════════════════════════════════════════════════════════\n");
 }
