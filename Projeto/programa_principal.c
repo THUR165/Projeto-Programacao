@@ -63,7 +63,6 @@ void tela_principal(void){
     
 }
 
-
 //void clientes(void){
     //printf("Modulo Clientes \n");
     /*
