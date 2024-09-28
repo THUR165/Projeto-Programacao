@@ -1,3 +1,4 @@
+#include <stdio.h>
 void tela_cadastrar(void){
     int resp;
     printf("\n");
@@ -15,9 +16,10 @@ void tela_cadastrar(void){
     scanf("%i", &resp);
     printf("═══════════════════════════════════════════════════════════\n");
     if (resp == 1 ){
-        printf(" Modulo Clientes \n"); //função fazer compras
+        printf(" Cadastrar Clientes \n"); //função fazer compras
+        //cadastrar.c
     } else if (resp == 2){
-        printf("Modulo Funcionário \n"); //function de cadastrar cliente
+        printf(" Verificar Dados \n"); 
     } else{
         printf("Resposta inválida. \n");
     }

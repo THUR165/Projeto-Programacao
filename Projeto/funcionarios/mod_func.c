@@ -4,9 +4,9 @@ void modulo_funcionario(void){
     printf("═══════════════════════════════════════════════════════════\n");
     printf("═══════            Modulo Funcionario                ══════\n");
     printf("═══════════════════════════════════════════════════════════\n");
-    printf("═══════         1-produtos                           ══════\n");
-    printf("═══════         2-Funcionarios                       ══════\n");
-    printf("═══════         0-sair                               ══════\n");
+    printf("═══════         [1] - Produtos                          ══════\n");
+    printf("═══════         [2] - Funcionarios                      ══════\n");
+    printf("═══════         [0] - sair                              ══════\n");
     printf("═══════════════════════════════════════════════════════════\n");
      if (resp == 1 ){
         printf(" Cadastrar Produtos \n");
