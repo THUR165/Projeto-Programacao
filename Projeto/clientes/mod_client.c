@@ -1,3 +1,4 @@
+#include <stdio.h>
 void tela_client(void){
     int resp;
     printf("\n");
@@ -11,7 +12,8 @@ void tela_client(void){
     scanf("%i", &resp);
     printf("═══════════════════════════════════════════════════════════\n");
     if (resp == 1 ){
-        printf(" Modulo Clientes \n"); //função fazer compras
+        printf(" Modulo Clientes \n");
+        //cad_client(); //função fazer compras
     } else if (resp == 2){
         printf("Modulo Funcionário \n"); //function de cadastrar cliente
     } else{
