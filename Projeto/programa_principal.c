@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 
 /*
 #include <stdio.h>
@@ -28,7 +28,7 @@ void main(void){
 
 
 //funções principais
-void tela_principal(void);
+void tela_client(void);
 void tela_sobre(void);
 void tela_equipe(void);
 void modulo_funcionario(void);
@@ -38,7 +38,7 @@ void tela_funcionario(void);
 
 //programa principal
 int main(void){
-    tela_principal();
+    tela_client();
     tela_sobre();
     tela_equipe();
     modulo_funcionario();
@@ -47,7 +47,8 @@ int main(void){
 }
 
 
-void tela_principal(void){
+#include <stdio.h>
+void tela_client(void){
     int resp;
     printf("\n");
     printf("═══════════════════════════════════════════════════════════\n");
@@ -55,12 +56,13 @@ void tela_principal(void){
     printf("═══════════════════════════════════════════════════════════\n");
     printf("═══    Sistema de gestão de material de construção    ═════\n");
     printf("═══════════════════════════════════════════════════════════\n");
-    printf("═══                [1] - Clientes                     ═════\n");
-    printf("═══                [2] - Funcionário                  ═════\n");
+    printf("═══                [1] - Cadastrar Clientes           ═════\n");
+    printf("═══                [2] - Fazer Compras                ═════\n");
     scanf("%i", &resp);
     printf("═══════════════════════════════════════════════════════════\n");
     if (resp == 1 ){
-        printf(" Modulo Clientes \n"); //função fazer compras
+        printf(" Modulo Clientes \n");
+        //cad_client(); //função fazer compras
     } else if (resp == 2){
         printf("Modulo Funcionário \n"); //function de cadastrar cliente
     } else{
@@ -68,7 +70,6 @@ void tela_principal(void){
     }
     
 }
-
 
 //void clientes(void){
     //printf("Modulo Clientes \n");
