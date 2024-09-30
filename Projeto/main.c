@@ -2,6 +2,7 @@
 #include <string.h>
 
 
+
 //funções principais
 void tela_principal(void);
 void tela_sobre(void);
