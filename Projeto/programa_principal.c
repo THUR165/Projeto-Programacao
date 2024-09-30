@@ -39,6 +39,7 @@ void tela_cadastrarp(void);
 void cadastrar_produto(void);
 void exibir_produto(void);
 void modificar_produto(void);
+void excluir_produto(void);
 
 
 //programa principal
@@ -54,6 +55,7 @@ int main(void){
     cadastrar_produto();
     exibir_produto();
     modificar_produto();
+    excluir_produto();
 }
 
 
@@ -234,6 +236,18 @@ void modificar_produto(void){
     printf("═══════            codigo de barra:(chave)           ══════\n");
     printf("═══════            modificar(nome do produto)        ══════\n");
     printf("═══════            modificar(preço do produto)       ══════\n");
+    printf("═══════════════════════════════════════════════════════════\n");
+}
+
+void excluir_produto(void){
+    printf("\n");
+    printf("═══════════════════════════════════════════════════════════\n");
+    printf("═══════             excluir produto                  ══════\n");
+    printf("═══════════════════════════════════════════════════════════\n");
+    printf("═══════            codigo de barra:(chave)           ══════\n");
+    printf("═══════            (verificar se sim ou nao)         ══════\n");
+    printf("═══════            caso sim excluir(nome do produto) ══════\n");
+    printf("═══════            caso sim excluir(preço do produto)══════\n");
     printf("═══════════════════════════════════════════════════════════\n");
 }
 
