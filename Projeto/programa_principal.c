@@ -37,6 +37,7 @@ void tela_funcionario(void);
 void tela_cadastrarc(void);
 void tela_cadastrarp(void);
 void cadastrar_produto(void);
+void exibir_produto(void);
 
 
 //programa principal
@@ -50,6 +51,7 @@ int main(void){
     tela_cadastrarc();
     tela_cadastrarp();
     cadastrar_produto();
+    exibir_produto();
 }
 
 
@@ -208,6 +210,17 @@ void cadastrar_produto(void){
     printf("═══════            codigo de barra:(inserir)(chave)  ══════\n");
     printf("═══════            nome do produto:(inserir)         ══════\n");
     printf("═══════            preço do produto:(inserir)        ══════\n");
+    printf("═══════════════════════════════════════════════════════════\n");
+}
+
+void exibir_produto(void){
+    printf("\n");
+    printf("═══════════════════════════════════════════════════════════\n");
+    printf("═══════                 exibir produto               ══════\n");
+    printf("═══════════════════════════════════════════════════════════\n");
+    printf("═══════            codigo de barra:(chave)           ══════\n");
+    printf("═══════            mostrar(nome do produto)          ══════\n");
+    printf("═══════            mostrar(preço do produto)         ══════\n");
     printf("═══════════════════════════════════════════════════════════\n");
 }
 
