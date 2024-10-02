@@ -40,6 +40,7 @@ void cadastrar_produto(void);
 void exibir_produto(void);
 void modificar_produto(void);
 void excluir_produto(void);
+void cadastrar_funcionario(void);
 
 
 //programa principal
@@ -56,6 +57,7 @@ int main(void){
     exibir_produto();
     modificar_produto();
     excluir_produto();
+    cadastrar_funcionario();
 }
 
 
@@ -263,5 +265,16 @@ void tela_funcionario(void){
     printf("═══════         0-sair                               ══════\n");
     printf("═══════════════════════════════════════════════════════════\n");
     printf("═══════════════════════════════════════════════════════════\n");
+    printf("═══════════════════════════════════════════════════════════\n");
+}
+
+void cadastrar_funcionario(void){
+    printf("\n");
+    printf("═══════════════════════════════════════════════════════════\n");
+    printf("═══════             cadastrar funcionario            ══════\n");
+    printf("═══════════════════════════════════════════════════════════\n");
+    printf("═══════            CPF:(inserir)(chave)              ══════\n");
+    printf("═══════            nome do Funcionario:(inserir)     ══════\n");
+    printf("═══════            data de nacimento:(inserir)       ══════\n");
     printf("═══════════════════════════════════════════════════════════\n");
 }
