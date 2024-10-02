@@ -43,6 +43,7 @@ void excluir_produto(void);
 void cadastrar_funcionario(void);
 void exibir_funcionario(void);
 void modificar_funcionario(void);
+void excluir_funcionario(void);
 
 
 //programa principal
@@ -62,6 +63,7 @@ int main(void){
     cadastrar_funcionario();
     exibir_funcionario();
     modificar_funcionario();
+    excluir_funcionario();
 }
 
 
@@ -303,5 +305,17 @@ void modificar_funcionario(void){
     printf("═══════            mostrar(nome do Funcionario)      ══════\n");
     printf("═══════            mostrar(data de nacimento)        ══════\n");
     printf("═══════            Perguntar se que modificar(S/N)   ══════\n");
+    printf("═══════════════════════════════════════════════════════════\n");
+}
+
+void excluir_funcionario(void){
+    printf("\n");
+    printf("═══════════════════════════════════════════════════════════\n");
+    printf("═══════             excluir funcionario              ══════\n");
+    printf("═══════════════════════════════════════════════════════════\n");
+    printf("═══════            CPF:(inserir)(chave)              ══════\n");
+    printf("═══════            mostrar(nome do Funcionario)      ══════\n");
+    printf("═══════            mostrar(data de nacimento)        ══════\n");
+    printf("═══════            Perguntar se que excluir(S/N)     ══════\n");
     printf("═══════════════════════════════════════════════════════════\n");
 }
