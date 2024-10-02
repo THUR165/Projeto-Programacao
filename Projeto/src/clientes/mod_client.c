@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 void tela_cadastrar(void){
     int resp;
     printf("\n");
@@ -15,6 +16,7 @@ void tela_cadastrar(void){
     printf("======                [0] - Sair                      =====\n");
     scanf("%i", &resp);
     printf("===========================================================\n");
+    /*
     if (resp == 1 ){
         printf(" Cadastrar Clientes \n"); //função fazer compras
         //cadastrar.c
@@ -23,5 +25,6 @@ void tela_cadastrar(void){
     } else{
         printf("Resposta inválida. \n");
     }
+    */
     
 }
