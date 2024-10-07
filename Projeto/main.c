@@ -8,7 +8,7 @@
 //programa principal
 int main(){
     printf("Iniciando o programa...\n");
-    tela_principal();
+    int tela_principal();
     return 0;
 }
 

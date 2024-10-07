@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "./include/funcoes.h"
+#include "./include/interface.h"
 
 
 void tela_sobre(){
