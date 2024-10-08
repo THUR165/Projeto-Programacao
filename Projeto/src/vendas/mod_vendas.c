@@ -3,7 +3,7 @@
 //altera compras(mostrar tipo o carrinho)
 // excluir produto da lista de compras(repor no estoque)
 #include <stdio.h>
-void tela_cadastrar(void){
+int mod_vendas(void){
     int resp;
     printf("\n");
     printf("===========================================================\n");

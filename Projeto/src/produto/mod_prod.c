@@ -1,5 +1,5 @@
 #include <stdio.h>
-void tela_produto(void){
+int mod_prod(void){
     printf("\n");
     printf("===========================================================\n");
     printf("=====                Produto                          =====\n");

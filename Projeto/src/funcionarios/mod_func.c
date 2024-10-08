@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-void tela_funcionario(void){
+int mod_func(void){
+    int op;
     printf("\n");
     printf("===========================================================\n");
     printf("=====                Funcionario                      =====\n");
@@ -13,4 +14,6 @@ void tela_funcionario(void){
     printf("===========================================================\n");
     printf("===========================================================\n");
     printf("===========================================================\n");
+    scanf("%d", &op);
+    return op;
 }

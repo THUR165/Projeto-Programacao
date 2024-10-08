@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void tela_cadastrar(void){
+void mod_client(void){
     int resp;
     printf("\n");
     printf("===========================================================\n");

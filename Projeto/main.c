@@ -7,9 +7,26 @@
 //funções principais
 //programa principal
 int main(){
+    int op;
     printf("Iniciando o programa...\n");
-    int tela_principal();
-    return 0;
+      do {
+        op = tela_main();
+        switch (op){
+            case 1: mod_client();
+                    break;
+            case 2: mod_vendas();
+                    break;
+            case 3: mod_func();
+                    break;
+            case 4: mod_prod();
+                    break;
+            case 5: info_proj();
+                    break;
+            
+        }
+      }while (op !=0);
+      printf("FIM DO PROGRAMA!\n");
+      return 0;
 }
 
 

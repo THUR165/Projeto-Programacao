@@ -1,7 +1,7 @@
 #include <stdio.h>
 //CRUD do cliente:
 //cadastrar/verificar/alterar/excluir
-
+/*
 void clientes(void){
     //printf("Modulo Clientes \n");    
     char resp[1];
@@ -15,3 +15,5 @@ void clientes(void){
         printf("Resposta inválida. \n");
     }
 }    
+
+*/
