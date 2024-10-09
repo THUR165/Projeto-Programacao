@@ -23,5 +23,4 @@ void info_proj(){
     printf("=====            Leandro Sergio Da Silva              =====\n");
     printf("=====            Arthur De Medeiros Dantas            =====\n");
     printf("===========================================================\n");
-
 }

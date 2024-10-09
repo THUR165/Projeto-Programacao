@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void mod_client(void){
-    int resp;
+    int op;
     printf("\n");
     printf("===========================================================\n");
     printf("======                SIG-Building                    =====\n");
@@ -14,8 +14,10 @@ void mod_client(void){
     printf("======                [4] - Excluir Dados             =====\n");
     printf("======                [5] - Relatório                 =====\n");
     printf("======                [0] - Sair                      =====\n");
-    scanf("%i", &resp);
+    printf("Sua Escolha: --> ");
+    scanf("%i", &op);
     printf("===========================================================\n");
+    
     /*
     if (resp == 1 ){
         printf(" Cadastrar Clientes \n"); //função fazer compras

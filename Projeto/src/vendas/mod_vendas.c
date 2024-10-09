@@ -4,7 +4,7 @@
 // excluir produto da lista de compras(repor no estoque)
 #include <stdio.h>
 int mod_vendas(void){
-    int resp;
+    int op;
     printf("\n");
     printf("===========================================================\n");
     printf("=====                SIG-Building                     =====\n");
@@ -17,8 +17,10 @@ int mod_vendas(void){
     printf("=====                [4] - Excluir Compras            =====\n");
     printf("=====                [5] - Relatório                  =====\n");
     printf("=====                [0] - Sair                       =====\n");
-    scanf("%i", &resp);
+    scanf("%i", &op);
     printf("===========================================================\n");
+    return 0;
+    /*
     if (resp == 1 ){
         printf(" Cadastrar Clientes \n"); //função fazer compras
         //cadastrar.c
@@ -27,5 +29,7 @@ int mod_vendas(void){
     } else{
         printf("Resposta inválida. \n");
     }
-    
-}
+ */    
+}   
+   
+ 
