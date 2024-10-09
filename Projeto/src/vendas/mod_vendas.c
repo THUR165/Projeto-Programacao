@@ -5,31 +5,25 @@
 #include <stdio.h>
 int mod_vendas(void){
     int op;
-    printf("\n");
-    printf("===========================================================\n");
-    printf("=====                SIG-Building                     =====\n");
-    printf("===========================================================\n");
-    printf("=====    Sistema de gestão de material de construção  =====\n");
-    printf("===========================================================\n");
-    printf("=====                [1] - Comprar produtos           =====\n");
-    printf("=====                [2] - Verificar Compras          =====\n");
-    printf("=====                [3] - Alterar Compras            =====\n");
-    printf("=====                [4] - Excluir Compras            =====\n");
-    printf("=====                [5] - Relatório                  =====\n");
-    printf("=====                [0] - Sair                       =====\n");
-    scanf("%i", &op);
-    printf("===========================================================\n");
+    printf("Modulo de Vendas \n");
+    do{
+        op = mod_venda();
+        switch (op){
+            case 1: printf("Comprar produto");
+                break;
+            case 2: printf("Verificar compras");
+                break;
+            case 3: printf("Alterar compras");
+                break;
+            case 4: printf("Excluir compras");
+                break;
+            case 5: printf("Relátorio");
+        }
+    }while (op !=0);
+        tela_main();
+
     return 0;
-    /*
-    if (resp == 1 ){
-        printf(" Cadastrar Clientes \n"); //função fazer compras
-        //cadastrar.c
-    } else if (resp == 2){
-        printf(" Verificar Dados \n"); 
-    } else{
-        printf("Resposta inválida. \n");
-    }
- */    
-}   
+    
+}
    
  

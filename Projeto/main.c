@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "./include/interface.h"
+#include "interface.h"
 
 //ERROR NA COPILAÇÃO/ NÃO TA CHAMANDO A FUNÇÃO DE TELA PRINCIPAL
 

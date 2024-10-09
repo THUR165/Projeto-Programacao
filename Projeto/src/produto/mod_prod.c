@@ -1,18 +1,23 @@
 #include <stdio.h>
 int mod_prod(void){
     int op;
-    printf("\n");
-    printf("===========================================================\n");
-    printf("=====                Produto                          =====\n");
-    printf("===========================================================\n");
-    printf("=====         [1] - Cadastrar produto                 =====\n");
-    printf("=====         [2] - Exibir produto                    =====\n");
-    printf("=====         [3] - Modificar produto                 =====\n");
-    printf("=====         [4] - Excluir produto                   =====\n");
-    printf("=====         [0] - Sair                              =====\n");
-    printf("===========================================================\n");
-    printf("Sua Escolha: --> ");
-    scanf("%i", &op);
-    printf("===========================================================\n");
+    printf("Modulo Funcionario...");
+    do{
+        op = mod_prod();
+        switch (op){
+            case 1: printf("Cadastrar Produto");
+                break;
+            case 2: printf("Verificar Produtos");
+                break;
+            case 3: printf("Alterar Produto");
+                break;
+            case 4: printf("Excluir produto");
+                break;
+            case 5: printf("Relátorio");
+        }
+    }while (op !=0);
+        tela_main();
+
     return 0;
+    
 }

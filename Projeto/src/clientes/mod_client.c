@@ -1,22 +1,26 @@
 #include <stdio.h>
+#include "./include/interface.h"
 
 void mod_client(void){
     int op;
-    printf("\n");
-    printf("===========================================================\n");
-    printf("======                SIG-Building                    =====\n");
-    printf("===========================================================\n");
-    printf("======    Sistema de gestão de material de construção =====\n");
-    printf("===========================================================\n");
-    printf("======                [1] - Cadastrar Clientes        =====\n");
-    printf("======                [2] - Verificar Dados           =====\n");
-    printf("======                [3] - Alterar Dados             =====\n");
-    printf("======                [4] - Excluir Dados             =====\n");
-    printf("======                [5] - Relatório                 =====\n");
-    printf("======                [0] - Sair                      =====\n");
-    printf("Sua Escolha: --> ");
-    scanf("%i", &op);
-    printf("===========================================================\n");
+    printf("Modulo Clientes...");
+    do{
+        op = mod_func();
+        switch (op){
+            case 1: printf("Cadastrar Cliente");
+                break;
+            case 2: printf("Verificar Informações");
+                break;
+            case 3: printf("Alterar informações");
+                break;
+            case 4: printf("Excluir informações");
+                break;
+            case 5: printf("Relátorio");
+        }
+    }while (op !=0);
+        tela_main();
+
+    return 0;
     
     /*
     if (resp == 1 ){
