@@ -3,6 +3,7 @@
 //altera compras(mostrar tipo o carrinho)
 // excluir produto da lista de compras(repor no estoque)
 #include <stdio.h>
+#include "./interface.h"
 int mod_vendas(void){
     int op;
     printf("Modulo de Vendas \n");

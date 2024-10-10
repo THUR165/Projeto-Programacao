@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "./include/interface.h"
+#include "interface.h"
 //Criar um mod relatorio: relatorio clientes,vendas,produtos e funcionários.
 
 int tela_main(){

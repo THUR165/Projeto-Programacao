@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "./interface.h"
 int mod_prod(void){
     int op;
     printf("Modulo Funcionario...");

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "./include/interface.h"
+#include "./interface.h"
 
 void mod_client(void){
     int op;
