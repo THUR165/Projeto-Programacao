@@ -129,7 +129,7 @@ int mod_client(void){
     } else{
         printf("Resposta inválida. \n");
     }
-    
+    return 0;
 }
 
 void tela_cadastrarp(void){
@@ -161,6 +161,7 @@ void tela_cadastrarp(void){
 
 
 int info_proj(){
+    int op;
     printf("\n");
     printf("===========================================================\n");
     printf("=====   Universidade Federal Rio Grande do Norte      =====\n");
@@ -184,6 +185,8 @@ int info_proj(){
     printf("=====            Arthur De Medeiros Dantas            =====\n");
     printf("===========================================================\n");
     getchar();
+    scanf("%i", &op);
+    printf("===                [0] - Sair                         =====\n");
     return 0;
 }
 
