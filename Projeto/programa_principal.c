@@ -9,7 +9,7 @@ int info_proj(void);
 int mod_func(void);
 int mod_prod(void);
 void tela_funcionario(void);
-void tela_cadastrarc(void);
+int mod_client(void);
 void tela_cadastrarp(void);
 void cadastrar_produto(void);
 void exibir_produto(void);
@@ -22,14 +22,14 @@ void excluir_funcionario(void);
 
 
 //programa principal
-int main(void){
+int chamada(void){
     tela_main();
     mod_vendas();
     info_proj();
     mod_func();
     mod_prod();
     mod_func();
-    tela_cadastrarc();
+    mod_client();
     tela_cadastrarp();
     cadastrar_produto();
     exibir_produto();
@@ -41,7 +41,28 @@ int main(void){
     excluir_funcionario();
 }
 
-
+int main(){
+    int op;
+    printf("Iniciando o programa...\n");
+      do {
+        op = tela_main();
+        switch (op){
+            case 1: mod_client();
+                    break;
+            case 2: mod_vendas();
+                    break;
+            case 3: mod_func();
+                    break;
+            case 4: mod_prod();
+                    break;
+            case 5: info_proj();
+                    break;
+            
+        }
+      }while (op !=0);
+      printf("FIM DO PROGRAMA!\n");
+      return 0;
+}
 
 int tela_main(){
     int op;
@@ -54,8 +75,8 @@ int tela_main(){
     printf("=====                [1] - Clientes                   =====\n");
     printf("=====                [2] - Vendas                     =====\n");
     printf("=====                [3] - Funcionário                =====\n");
-    printf("=====                [5] - Produto                    =====\n");
-    printf("=====                [4] - Sobre o Projeto            =====\n");
+    printf("=====                [4] - Produto                    =====\n");
+    printf("=====                [5] - Sobre o Projeto            =====\n");
     printf("=====                [0] - Sair                       =====\n");
     printf("Sua Escolha: --> ");
     scanf("%d", &op);
@@ -84,7 +105,7 @@ int mod_vendas(void){
 }
 
 
-void tela_cadastrarc(void){
+int mod_client(void){
     int resp;
     printf("\n");
     printf("===========================================================\n");
