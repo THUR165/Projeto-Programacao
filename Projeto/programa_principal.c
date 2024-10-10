@@ -8,7 +8,7 @@ int mod_vendas(void);
 void tela_sobre(void);
 void tela_equipe(void);
 int mod_func(void);
-void tela_produto(void);
+int mod_prod(void);
 void tela_funcionario(void);
 void tela_cadastrarc(void);
 void tela_cadastrarp(void);
@@ -28,8 +28,8 @@ int main(void){
     mod_vendas();
     tela_sobre();
     tela_equipe();
-    modulo_funcionario();
-    tela_produto();
+    mod_func();
+    mod_prod();
     mod_func();
     tela_cadastrarc();
     tela_cadastrarp();
@@ -186,17 +186,22 @@ int mod_func(void){
     return op;
 }
 
-void tela_produto(void){
+int mod_prod(void){
+    int op;
     printf("\n");
     printf("===========================================================\n");
-    printf("======═                Produto                       ======\n");
+    printf("=====                Produto                          =====\n");
     printf("===========================================================\n");
-    printf("======═         [1]-cadastrar produto                ======\n");
-    printf("======═         [2]-exibir produto                   ======\n");
-    printf("======═         [3]-modificar produto                ======\n");
-    printf("======═         [4]-excluir produto                  ======\n");
-    printf("======═         [0]- sair                            ======\n");
+    printf("=====         [1] - Cadastrar produto                 =====\n");
+    printf("=====         [2] - Exibir produto                    =====\n");
+    printf("=====         [3] - Modificar produto                 =====\n");
+    printf("=====         [4] - Excluir produto                   =====\n");
+    printf("=====         [0] - Sair                              =====\n");
     printf("===========================================================\n");
+    printf("Sua Escolha: --> ");
+    scanf("%i", &op);
+    printf("===========================================================\n");
+    return 0;
 }
 
 void cadastrar_produto(void){
