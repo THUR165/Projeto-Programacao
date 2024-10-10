@@ -5,8 +5,7 @@
 //funções principais
 int tela_main(void);
 int mod_vendas(void);
-void tela_sobre(void);
-void tela_equipe(void);
+int info_proj(void);
 int mod_func(void);
 int mod_prod(void);
 void tela_funcionario(void);
@@ -26,8 +25,7 @@ void excluir_funcionario(void);
 int main(void){
     tela_main();
     mod_vendas();
-    tela_sobre();
-    tela_equipe();
+    info_proj();
     mod_func();
     mod_prod();
     mod_func();
@@ -141,32 +139,31 @@ void tela_cadastrarp(void){
 }
 
 
-void tela_sobre(void){
+int info_proj(){
     printf("\n");
     printf("===========================================================\n");
-    printf("===   Universidade Federal Rio Grande do Norte        =====\n");
-    printf("===   Diciplina Programação  codigo:DCT1106           =====\n");
-    printf("===               Programa de Gestão                  =====\n");
-    printf("===   Para uma Loja de Material de Construção         =====\n");
+    printf("=====   Universidade Federal Rio Grande do Norte      =====\n");
+    printf("=====   Diciplina: Programação,  codigo: DCT1106      =====\n");
+    printf("=====               Programa de Gestão                =====\n");
+    printf("=====   Para uma Loja de Material de Construção       =====\n");
     printf("===========================================================\n");
-    printf("===   O Projeto tem o objetivo Criar um programa      =====\n");
-    printf("===   de Gestão para uma Loja de Materais             =====\n");
-    printf("===   de Construção,tem como objetivo ajudar na       =====\n");
-    printf("===   administração da loja,sendo possivel administar =====\n");
-    printf("===   produtos,vendas,clientes,funcionarios e tambem  =====\n");
-    printf("===   relatorios                                      =====\n");
+    printf("=====   O Projeto tem o objetivo Criar um programa    =====\n");
+    printf("=====   de Gestão para uma Loja de Materais           =====\n");
+    printf("=====   de Construção,tem como objetivo ajudar na     =====\n");
+    printf("=====   administração da loja,sendo possivel administa=====\n");
+    printf("=====   produtos,vendas,clientes,funcionarios e tambem=====\n");
+    printf("=====   relatorios                                    =====\n");
     printf("===========================================================\n");
 
-}
-
-void tela_equipe(void){
     printf("\n");
     printf("===========================================================\n");
-    printf("===            Equipe de desenvolvimento              =====\n");
+    printf("=====            Equipe de desenvolvimento            =====\n");
     printf("===========================================================\n");
-    printf("===            Leandro Sergio Da Silva                =====\n");
-    printf("===            Arthur De Medeiros Dantas              =====\n");
+    printf("=====            Leandro Sergio Da Silva              =====\n");
+    printf("=====            Arthur De Medeiros Dantas            =====\n");
     printf("===========================================================\n");
+    getchar();
+    return 0;
 }
 
 int mod_func(void){
