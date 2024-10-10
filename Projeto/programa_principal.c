@@ -3,7 +3,8 @@
 
 
 //funções principais
-void tela_main(void);
+int tela_main(void);
+int mod_vendas(void);
 void tela_sobre(void);
 void tela_equipe(void);
 void modulo_funcionario(void);
@@ -24,6 +25,7 @@ void excluir_funcionario(void);
 //programa principal
 int main(void){
     tela_main();
+    mod_vendas();
     tela_sobre();
     tela_equipe();
     modulo_funcionario();
@@ -62,6 +64,25 @@ int tela_main(){
     printf("===========================================================\n");
     return op;
   
+}
+
+int mod_vendas(void){
+    int op;
+    printf("\n");
+    printf("===========================================================\n");
+    printf("=====                SIG-Building                     =====\n");
+    printf("===========================================================\n");
+    printf("=====    Sistema de gestão de material de construção  =====\n");
+    printf("===========================================================\n");
+    printf("=====                [1] - Comprar produtos           =====\n");
+    printf("=====                [2] - Verificar Compras          =====\n");
+    printf("=====                [3] - Alterar Compras            =====\n");
+    printf("=====                [4] - Excluir Compras            =====\n");
+    printf("=====                [5] - Relatório                  =====\n");
+    printf("=====                [0] - Sair                       =====\n");
+    scanf("%i", &op);
+    printf("===========================================================\n");
+    return 0;
 }
 
 
