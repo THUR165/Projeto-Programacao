@@ -39,6 +39,8 @@ int chamada(void){
     exibir_funcionario();
     modificar_funcionario();
     excluir_funcionario();
+
+    return 0;
 }
 
 int main(){
