@@ -1,33 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*
-#include <stdio.h>
-char nome[21];
-float alt;
-float peso;
-float imc;
-
-void main(void){   
-    printf("Qual o seu nome? ");
-    scanf("%c", &nome);
-    printf("Digite sua Altura: ");
-    scanf("%f",alt);
-    printf("Qual o seu peso? ");
-    scanf("%f",&peso);
-
-    printf("Seu imc é: %.f",imc);
-    
-    
-// peso / altura**2
-}
-
-
-*/
-
-
 
 //funções principais
+void tela_main(void);
 void tela_sobre(void);
 void tela_equipe(void);
 void modulo_funcionario(void);
@@ -47,6 +23,7 @@ void excluir_funcionario(void);
 
 //programa principal
 int main(void){
+    tela_main();
     tela_sobre();
     tela_equipe();
     modulo_funcionario();
@@ -66,22 +43,25 @@ int main(void){
 
 
 
-int tela_main(void){
+int tela_main(){
     int op;
     printf("\n");
     printf("===========================================================\n");
-    printf("===            Sistema de Gestão de Loja               ====\n");
+    printf("=====                SIG-Building                     =====\n");
     printf("===========================================================\n");
-    printf("===                [1] - Módulo Clientes               ====\n");
-    printf("===                [2] - Módulo Vendas                 ====\n");
-    printf("===                [3] - Módulo Funcionários           ====\n");
-    printf("===                [4] - Módulo Produtos               ====\n");
-    printf("===                [5] - Informações do Projeto        ====\n");
-    printf("===                [0] - Sair                          ====\n");
+    printf("=====    Sistema de gestão de material de construção  =====\n");
     printf("===========================================================\n");
-    printf("Escolha uma opção: ");
+    printf("=====                [1] - Clientes                   =====\n");
+    printf("=====                [2] - Vendas                     =====\n");
+    printf("=====                [3] - Funcionário                =====\n");
+    printf("=====                [5] - Produto                    =====\n");
+    printf("=====                [4] - Sobre o Projeto            =====\n");
+    printf("=====                [0] - Sair                       =====\n");
+    printf("Sua Escolha: --> ");
     scanf("%d", &op);
+    printf("===========================================================\n");
     return op;
+  
 }
 
 
@@ -139,22 +119,6 @@ void tela_cadastrarp(void){
     
 }
 
-//void clientes(void){
-    //printf("Modulo Clientes \n");
-    /*
-    char resp[1];
-    printf("Já possui cadastro de Cliente? S/N: \n");
-    scanf("%c", &resp);
-    if (resp == "S" || resp == "s"){
-        printf("Fazer Compras"); //função fazer compras
-    } else if (resp == "N"  || resp == "n"){
-        printf("Cadastramento de Cliente\n"); //function de cadastrar cliente
-    } else{
-        printf("Resposta inválida. \n");
-    }
-    
-     */
-    
 
 void tela_sobre(void){
     printf("\n");
