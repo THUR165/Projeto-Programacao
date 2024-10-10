@@ -67,7 +67,25 @@ int main(void){
 }
 
 
-#include <stdio.h>
+
+int tela_main(void){
+    int op;
+    printf("\n");
+    printf("===========================================================\n");
+    printf("===            Sistema de Gestão de Loja               ====\n");
+    printf("===========================================================\n");
+    printf("===                [1] - Módulo Clientes               ====\n");
+    printf("===                [2] - Módulo Vendas                 ====\n");
+    printf("===                [3] - Módulo Funcionários           ====\n");
+    printf("===                [4] - Módulo Produtos               ====\n");
+    printf("===                [5] - Informações do Projeto        ====\n");
+    printf("===                [0] - Sair                          ====\n");
+    printf("===========================================================\n");
+    printf("Escolha uma opção: ");
+    scanf("%d", &op);
+    return op;
+}
+
 void tela_client(void){
     int resp;
     printf("\n");
