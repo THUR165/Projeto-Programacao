@@ -127,7 +127,7 @@ int mod_vendas(void){
     int op;
     printf("\n");
     printf("===========================================================\n");
-    printf("=====                SIG-Building                     =====\n");
+    printf("=====                   vendas                        =====\n");
     printf("===========================================================\n");
     printf("=====    Sistema de gestão de material de construção  =====\n");
     printf("===========================================================\n");
@@ -148,7 +148,7 @@ int mod_client(void){
     int resp;
     printf("\n");
     printf("===========================================================\n");
-    printf("===                SIG-Building                       =====\n");
+    printf("===                    cliente                        =====\n");
     printf("===========================================================\n");
     printf("===    Sistema de gestão de material de construção    =====\n");
     printf("===========================================================\n");
