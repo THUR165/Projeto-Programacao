@@ -2,7 +2,7 @@
 #include "interface.h"
 //Criar um mod relatorio: relatorio clientes,vendas,produtos e funcionários.
 
-int tela_main(){
+int tela_main(void){
     int op;
     printf("\n");
     printf("===========================================================\n");
@@ -13,8 +13,9 @@ int tela_main(){
     printf("=====                [1] - Clientes                   =====\n");
     printf("=====                [2] - Vendas                     =====\n");
     printf("=====                [3] - Funcionário                =====\n");
-    printf("=====                [5] - Produto                    =====\n");
-    printf("=====                [4] - Sobre o Projeto            =====\n");
+    printf("=====                [4] - Produto                    =====\n");
+    printf("=====                [5] - Relatório                  =====\n");
+    printf("=====                [6] - Sobre o Projeto            =====\n");
     printf("=====                [0] - Sair                       =====\n");
     printf("Sua Escolha: --> ");
     scanf("%d", &op);
@@ -22,8 +23,25 @@ int tela_main(){
     return op;
   
 }
-
-int mod_vendas(void){
+int tela_mod_cliente(){
+    int op;
+    printf("===========================================================\n");
+    printf("======                SIG-Building                    =====\n");
+    printf("===========================================================\n");
+    printf("======    Sistema de gestão de material de construção =====\n");
+    printf("===========================================================\n");
+    printf("======                [1] - Cadastrar Clientes        =====\n");
+    printf("======                [2] - Verificar Dados           =====\n");
+    printf("======                [3] - Alterar Dados             =====\n");
+    printf("======                [4] - Excluir Dados             =====\n");
+    printf("======                [5] - Relatório                 =====\n");
+    printf("======                [0] - Sair                      =====\n");
+    scanf("%i", &op);
+    printf("═══════════════════════════════════════════════════════════\n");
+    printf("===========================================================\n");
+    return 0;
+}
+int tela_mod_vendas(void){
     int op;
     printf("\n");
     printf("===========================================================\n");
@@ -35,14 +53,13 @@ int mod_vendas(void){
     printf("=====                [2] - Verificar Compras          =====\n");
     printf("=====                [3] - Alterar Compras            =====\n");
     printf("=====                [4] - Excluir Compras            =====\n");
-    printf("=====                [5] - Relatório                  =====\n");
     printf("=====                [0] - Sair                       =====\n");
     scanf("%i", &op);
     printf("===========================================================\n");
     return 0;
 }
 
-int mod_func(void){
+int tela_mod_func(void){
     int op;
     printf("\n");
     printf("===========================================================\n");
@@ -59,7 +76,7 @@ int mod_func(void){
     return op;
 }
 
-int mod_prod(void){
+int tela_mod_prod(void){
     int op;
     printf("\n");
     printf("===========================================================\n");
@@ -77,7 +94,7 @@ int mod_prod(void){
     return 0;
 }
 
-int mod_venda(void){
+int tela_mod_venda(void){
     int op;
     printf("\n");
     printf("===========================================================\n");
@@ -96,7 +113,7 @@ int mod_venda(void){
     return 0;
 }
 
-int info_proj(){
+int tela_info_proj(void){
     printf("\n");
     printf("===========================================================\n");
     printf("=====   Universidade Federal Rio Grande do Norte      =====\n");
