@@ -321,36 +321,31 @@ void cadastrar_funcionario(void){
 }
 
 void exibir_funcionario(void){
-    printf("\n");
+    char cpf[20];
+    printf("\n===========================================================\n");
+    printf("======═             Exibir Funcionário               ======\n");
     printf("===========================================================\n");
-    printf("=======             exibir funcionario               ======\n");
-    printf("===========================================================\n");
-    printf("=======            CPF:(inserir)(chave)              ======\n");
-    printf("=======            mostrar(nome do Funcionario)      ======\n");
-    printf("=======            mostrar(data de nacimento)        ======\n");
+    printf("Digite o CPF do funcionário: ");
+    scanf("%s", cpf);
     printf("===========================================================\n");
 }
 
 void modificar_funcionario(void){
-    printf("\n");
+    char cpf[20];
+    printf("\n===========================================================\n");
+    printf("======═             Modificar Funcionário            ======\n");
     printf("===========================================================\n");
-    printf("=======             modificar funcionario            ======\n");
-    printf("===========================================================\n");
-    printf("=======            CPF:(inserir)(chave)              ======\n");
-    printf("=======            mostrar(nome do Funcionario)      ======\n");
-    printf("=======            mostrar(data de nacimento)        ======\n");
-    printf("=======            Perguntar se que modificar(S/N)   ======\n");
+    printf("Digite o CPF do funcionário a ser modificado: ");
+    scanf("%s", cpf);
     printf("===========================================================\n");
 }
 
 void excluir_funcionario(void){
-    printf("\n");
+    char cpf[20];
+    printf("\n===========================================================\n");
+    printf("======═             Excluir Funcionário              ======\n");
     printf("===========================================================\n");
-    printf("=======             excluir funcionario              ======\n");
-    printf("===========================================================\n");
-    printf("=======            CPF:(inserir)(chave)              ======\n");
-    printf("=======            mostrar(nome do Funcionario)      ======\n");
-    printf("=======            mostrar(data de nacimento)        ======\n");
-    printf("=======            Perguntar se que excluir(S/N)     ======\n");
+    printf("Digite o CPF do funcionário a ser excluído: ");
+    scanf("%s", cpf);
     printf("===========================================================\n");
 }
