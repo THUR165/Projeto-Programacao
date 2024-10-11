@@ -6,7 +6,7 @@
 int tela_main(void);
 int mod_vendas(void);
 int info_proj(void);
-int mod_client(void);
+void mod_client(void);
 int mod_prod(void);
 void mod_func(void);
 
@@ -29,30 +29,10 @@ void exibir_funcionario(void);
 void modificar_funcionario(void);
 void excluir_funcionario(void);
 
-
-//programa principal
-int chamada(void){
-    tela_main();
-    mod_vendas();
-    info_proj();
-    mod_func();
-    mod_prod();
-    mod_client();
-    cadastrar_produto();
-    exibir_produto();
-    modificar_produto();
-    excluir_produto();
-    exibir_funcionario();
-    modificar_funcionario();
-    excluir_funcionario();
-
-    return 0;
-}
-
 int main(void){
     int op;
     printf("Iniciando o programa...\n");
-      do {
+    do {
         op = tela_main();
         switch (op){
             case 1: mod_client();
@@ -61,14 +41,14 @@ int main(void){
                     break;
             case 3: mod_func();
                     break;
-            case 4: mod_prod();  // Navega para o módulo de produto
+            case 4: mod_prod();
                     break;
             case 5: info_proj();
                     break;
         }
-      } while (op != 0);
-      printf("FIM DO PROGRAMA!\n");
-      return 0;
+    } while (op != 0);
+    printf("FIM DO PROGRAMA!\n");
+    return 0;
 }
 
 
@@ -123,6 +103,7 @@ int info_proj(){
     return 0;
 }
 
+//vendas
 int mod_vendas(void){
     int op;
     printf("\n");
@@ -144,32 +125,70 @@ int mod_vendas(void){
 
 
 // modulo clientes
-int mod_client(void){
-    int resp;
-    printf("\n");
-    printf("===========================================================\n");
-    printf("===                    cliente                        =====\n");
-    printf("===========================================================\n");
-    printf("===    Sistema de gestão de material de construção    =====\n");
-    printf("===========================================================\n");
-    printf("===                [1] - Cadastrar Clientes           =====\n");
-    printf("===                [2] - Verificar Dados              =====\n");
-    printf("===                [3] - Alterar Dados                =====\n");
-    printf("===                [4] - Excluir Dados                =====\n");
-    printf("===                [5] - Relatório                    =====\n");
-    printf("===                [0] - Sair                         =====\n");
-    scanf("%i", &resp);
-    printf("===========================================================\n");
-    if (resp == 1 ){
-        printf(" Cadastrar Clientes \n"); //função fazer compras
-        //cadastrar.c
-    } else if (resp == 2){
-        printf(" Verificar Dados \n"); 
-    } else{
-        printf("Resposta inválida. \n");
-    }
-    return 0;
+void mod_client(void){
+    int op;
+    do {
+        printf("\n===========================================================\n");
+        printf("===                Módulo de Clientes                =====\n");
+        printf("===========================================================\n");
+        printf("===    [1] - Cadastrar Clientes                      ===\n");
+        printf("===    [2] - Exibir Clientes                         ===\n");
+        printf("===    [3] - Modificar Clientes                      ===\n");
+        printf("===    [4] - Excluir Clientes                        ===\n");
+        printf("===    [0] - Voltar ao Menu Principal                ===\n");
+        printf("===========================================================\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &op);
+        switch(op){
+            case 1:
+                cadastrar_cliente();
+                break;
+            case 2:
+                exibir_cliente();
+                break;
+            case 3:
+                modificar_cliente();
+                break;
+            case 4:
+                excluir_cliente();
+                break;
+            case 0:
+                printf("Voltando ao Menu Principal...\n");
+                break;
+            default:
+                printf("Opção inválida! Tente novamente.\n");
+        }
+    } while(op != 0);
 }
+
+void cadastrar_cliente(void){
+    char nome[50];
+    char cpf[20];
+    printf("\n===========================================================\n");
+    printf("======═             Cadastrar Cliente                ======\n");
+    printf("===========================================================\n");
+    printf("Digite o nome do cliente: ");
+    scanf(" %[^\n]", nome);
+    printf("Digite o CPF do cliente: ");
+    scanf("%s", cpf);
+    printf("===========================================================\n");
+}
+
+void exibir_cliente(void) {
+    // Implemente a exibição do cliente
+    printf("Função exibir_cliente ainda não implementada.\n");
+}
+
+void modificar_cliente(void) {
+    // Implemente a modificação do cliente
+    printf("Função modificar_cliente ainda não implementada.\n");
+}
+
+void excluir_cliente(void) {
+    // Implemente a exclusão do cliente
+    printf("Função excluir_cliente ainda não implementada.\n");
+}
+
 
 // modulo produtos
 
@@ -219,7 +238,7 @@ int mod_prod(void) {
 void cadastrar_produto(void){
     char codigo[20];
     char nome[50];
-    char preco;
+    float preco;
     
     printf("\n===========================================================\n");
     printf("======═             Cadastrar Produto                ======\n");
@@ -229,9 +248,10 @@ void cadastrar_produto(void){
     printf("Digite o nome do produto: ");
     scanf(" %[^\n]", nome);  // Lê uma string com espaços
     printf("Digite o preço do produto: ");
-    scanf("%c", &preco);
+    scanf("%f", &preco);   // Corrigido para ler um float
     printf("===========================================================\n");
 }
+
 
 void exibir_produto(void){
     char codigo[20];
@@ -315,10 +335,12 @@ void cadastrar_funcionario(void){
     scanf(" %[^\n]", nome);
     printf("Digite o CPF do funcionário: ");
     scanf("%s", cpf);
+    getchar();
     printf("Digite a data de nascimento (DD/MM/AAAA): ");
     scanf("%s", data_nasc);
     printf("===========================================================\n");
 }
+
 
 void exibir_funcionario(void){
     char cpf[20];
