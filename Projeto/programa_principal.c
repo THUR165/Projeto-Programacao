@@ -238,36 +238,36 @@ void cadastrar_produto(void){
 }
 
 void exibir_produto(void){
-    printf("\n");
+    char codigo[20];
+    printf("\n===========================================================\n");
+    printf("======═                 Exibir Produto               ======\n");
     printf("===========================================================\n");
-    printf("======═                 exibir produto               ======\n");
-    printf("===========================================================\n");
-    printf("======═            codigo de barra:(chave)           ======\n");
-    printf("======═            mostrar(nome do produto)          ======\n");
-    printf("======═            mostrar(preço do produto)         ======\n");
+    printf("Digite o código de barra do produto: ");
+    scanf("%s", codigo);
+    printf("\nExibindo informações do produto com código: %s\n", codigo);
+    printf("Nome: Exemplo de Produto\n");
+    printf("Preço: R$ 100,00\n");
     printf("===========================================================\n");
 }
 
 void modificar_produto(void){
-    printf("\n");
+    char codigo[20];
+    printf("\n===========================================================\n");
+    printf("======═             Modificar Produto                ======\n");
     printf("===========================================================\n");
-    printf("======═             modificar produto                ======\n");
-    printf("===========================================================\n");
-    printf("======═            codigo de barra:(chave)           ======\n");
-    printf("======═            modificar(nome do produto)        ======\n");
-    printf("======═            modificar(preço do produto)       ======\n");
+    printf("Digite o código de barra do produto a ser modificado: ");
+    scanf("%s", codigo);
     printf("===========================================================\n");
 }
 
 void excluir_produto(void){
-    printf("\n");
+    char codigo[20];
+    
+    printf("\n===========================================================\n");
+    printf("======═             Excluir Produto                  ======\n");
     printf("===========================================================\n");
-    printf("======═             excluir produto                  ======\n");
-    printf("===========================================================\n");
-    printf("======═            codigo de barra:(chave)           ======\n");
-    printf("======═            (verificar se sim ou nao)         ======\n");
-    printf("======═            caso sim excluir(nome do produto) ======\n");
-    printf("======═            caso sim excluir(preço do produto)======\n");
+    printf("Digite o código de barra do produto a ser excluído: ");
+    scanf("%s", codigo);
     printf("===========================================================\n");
 }
 
