@@ -6,14 +6,18 @@
 int tela_main(void);
 int mod_vendas(void);
 int info_proj(void);
-
-
-int mod_func(void);
-int mod_prod(void);
 int mod_client(void);
+int mod_prod(void);
+int mod_func(void);
+
+
+//cliente
+void cadastrar_cliente(void);
+void exibir_cliente(void);
+void modificar_cliente(void);
+void excluir_cliente(void);
 
 //produto
-void tela_cadastrarp(void);
 void cadastrar_produto(void);
 void exibir_produto(void);
 void modificar_produto(void);
@@ -34,7 +38,6 @@ int chamada(void){
     mod_func();
     mod_prod();
     mod_client();
-    tela_cadastrarp();
     cadastrar_produto();
     exibir_produto();
     modificar_produto();
@@ -46,7 +49,7 @@ int chamada(void){
     return 0;
 }
 
-int main(){
+int main(void){
     int op;
     printf("Iniciando o programa...\n");
       do {
@@ -58,16 +61,16 @@ int main(){
                     break;
             case 3: mod_func();
                     break;
-            case 4: mod_prod();
+            case 4: mod_prod();  // Navega para o módulo de produto
                     break;
             case 5: info_proj();
                     break;
-            
         }
-      }while (op !=0);
+      } while (op != 0);
       printf("FIM DO PROGRAMA!\n");
       return 0;
 }
+
 
 int tela_main(){
     int op;
@@ -140,6 +143,7 @@ int mod_vendas(void){
 }
 
 
+// modulo clientes
 int mod_client(void){
     int resp;
     printf("\n");
@@ -167,52 +171,50 @@ int mod_client(void){
     return 0;
 }
 
-
-void tela_cadastrarp(void){
-    int resp;
-    printf("\n");
-    printf("===========================================================\n");
-    printf("===                SIG-Building                       =====\n");
-    printf("===========================================================\n");
-    printf("===    Sistema de gestão de material de construção    =====\n");
-    printf("===========================================================\n");
-    printf("===                [1] - Comprar produtos             =====\n");
-    printf("===                [2] - Verificar Compras            =====\n");
-    printf("===                [3] - Alterar Compras              =====\n");
-    printf("===                [4] - Excluir Compras              =====\n");
-    printf("===                [5] - Relatório                    =====\n");
-    printf("===                [0] - Sair                         =====\n");
-    scanf("%i", &resp);
-    printf("===========================================================\n");
-    if (resp == 1 ){
-        printf(" Cadastrar Clientes \n"); //função fazer compras
-        //cadastrar.c
-    } else if (resp == 2){
-        printf(" Verificar Dados \n"); 
-    } else{
-        printf("Resposta inválida. \n");
-    }
-    
-}
+// modulo produtos
 
 
-int mod_prod(void){
+int mod_prod(void) {
     int op;
-    printf("\n");
-    printf("===========================================================\n");
-    printf("=====                Produto                          =====\n");
-    printf("===========================================================\n");
-    printf("=====         [1] - Cadastrar produto                 =====\n");
-    printf("=====         [2] - Exibir produto                    =====\n");
-    printf("=====         [3] - Modificar produto                 =====\n");
-    printf("=====         [4] - Excluir produto                   =====\n");
-    printf("=====         [0] - Sair                              =====\n");
-    printf("===========================================================\n");
-    printf("Sua Escolha: --> ");
-    scanf("%i", &op);
-    printf("===========================================================\n");
+    do {
+        printf("\n");
+        printf("===========================================================\n");
+        printf("=====                Produto                          =====\n");
+        printf("===========================================================\n");
+        printf("=====         [1] - Cadastrar produto                 =====\n");
+        printf("=====         [2] - Exibir produto                    =====\n");
+        printf("=====         [3] - Modificar produto                 =====\n");
+        printf("=====         [4] - Excluir produto                   =====\n");
+        printf("=====         [0] - Sair                              =====\n");
+        printf("===========================================================\n");
+        printf("Sua Escolha: --> ");
+        scanf("%d", &op);
+        
+        switch(op) {
+            case 1:
+                cadastrar_produto();
+                break;
+            case 2:
+                exibir_produto();
+                break;
+            case 3:
+                modificar_produto();
+                break;
+            case 4:
+                excluir_produto();
+                break;
+            case 0:
+                printf("Saindo do módulo de produto...\n");
+                break;
+            default:
+                printf("Opção inválida! Tente novamente.\n");
+        }
+    } while (op != 0);  // Continua no loop até o usuário escolher "Sair"
+    
     return 0;
 }
+
+
 
 void cadastrar_produto(void){
     printf("\n");
@@ -258,6 +260,8 @@ void excluir_produto(void){
     printf("======═            caso sim excluir(preço do produto)======\n");
     printf("===========================================================\n");
 }
+
+//modulo funcionarios
 
 int mod_func(void){
     int op;
