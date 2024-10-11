@@ -174,19 +174,34 @@ void cadastrar_cliente(void){
     printf("===========================================================\n");
 }
 
-void exibir_cliente(void) {
-    // Implemente a exibição do cliente
-    printf("Função exibir_cliente ainda não implementada.\n");
+void exibir_cliente(void){
+    char cpf[20];
+    printf("\n===========================================================\n");
+    printf("======═                 Exibir Cliente               ======\n");
+    printf("===========================================================\n");
+    printf("Digite o CPF do cliente: ");
+    scanf("%s", cpf);
+    printf("===========================================================\n");
 }
 
-void modificar_cliente(void) {
-    // Implemente a modificação do cliente
-    printf("Função modificar_cliente ainda não implementada.\n");
+void modificar_cliente(void){
+    char cpf[20];
+    printf("\n===========================================================\n");
+    printf("======═             Modificar Cliente                ======\n");
+    printf("===========================================================\n");
+    printf("Digite o CPF do cliente a ser modificado: ");
+    scanf("%s", cpf);
+    printf("===========================================================\n");
 }
 
-void excluir_cliente(void) {
-    // Implemente a exclusão do cliente
-    printf("Função excluir_cliente ainda não implementada.\n");
+void excluir_cliente(void){
+    char cpf[20];
+    printf("\n===========================================================\n");
+    printf("======═             Excluir Cliente                  ======\n");
+    printf("===========================================================\n");
+    printf("Digite o CPF do cliente a ser excluído: ");
+    scanf("%s", cpf);
+    printf("===========================================================\n");
 }
 
 
@@ -233,8 +248,6 @@ int mod_prod(void) {
     return 0;
 }
 
-
-
 void cadastrar_produto(void){
     char codigo[20];
     char nome[50];
@@ -251,7 +264,6 @@ void cadastrar_produto(void){
     scanf("%f", &preco);   // Corrigido para ler um float
     printf("===========================================================\n");
 }
-
 
 void exibir_produto(void){
     char codigo[20];
@@ -322,7 +334,6 @@ void mod_func(void){
     } while(op != 0);
 }
 
-
 void cadastrar_funcionario(void){
     char nome[50];
     char cpf[20];
@@ -340,7 +351,6 @@ void cadastrar_funcionario(void){
     scanf("%s", data_nasc);
     printf("===========================================================\n");
 }
-
 
 void exibir_funcionario(void){
     char cpf[20];
