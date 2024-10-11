@@ -8,7 +8,7 @@ int mod_vendas(void);
 int info_proj(void);
 int mod_client(void);
 int mod_prod(void);
-int mod_func(void);
+void mod_func(void);
 
 
 //cliente
@@ -229,11 +229,7 @@ void cadastrar_produto(void){
     printf("Digite o nome do produto: ");
     scanf(" %[^\n]", nome);  // Lê uma string com espaços
     printf("Digite o preço do produto: ");
-    scanf("%f", &preco);
-    printf("\nProduto cadastrado com sucesso!\n");
-    printf("Código: %s\n", codigo);
-    printf("Nome: %s\n", nome);
-    printf("Preço: %.2f\n", preco);
+    scanf("%c", &preco);
     printf("===========================================================\n");
 }
 
@@ -243,10 +239,7 @@ void exibir_produto(void){
     printf("======═                 Exibir Produto               ======\n");
     printf("===========================================================\n");
     printf("Digite o código de barra do produto: ");
-    scanf("%s", codigo);
-    printf("\nExibindo informações do produto com código: %s\n", codigo);
-    printf("Nome: Exemplo de Produto\n");
-    printf("Preço: R$ 100,00\n");
+    scanf("%s", codigo);;
     printf("===========================================================\n");
 }
 
@@ -273,31 +266,57 @@ void excluir_produto(void){
 
 //modulo funcionarios
 
-int mod_func(void){
+void mod_func(void){
     int op;
-    printf("\n");
-    printf("===========================================================\n");
-    printf("=====                Funcionario                      =====\n");
-    printf("===========================================================\n");
-    printf("=====         [1] - cadastrar Funcionario             =====\n");
-    printf("=====         [2] - Exibir Funcionarios               =====\n");
-    printf("=====         [3] - modificar Funcionario             =====\n");
-    printf("=====         [4] - Excluir Funcionario               =====\n");
-    printf("=====         [0] - sair                              =====\n");
-    printf("===========================================================\n");
-    printf("Sua Escolha: --> ");
-    scanf("%d", &op);
-    return op;
+    do {
+        printf("\n===========================================================\n");
+        printf("===               Módulo de Funcionários              =====\n");
+        printf("===========================================================\n");
+        printf("===    [1] - Cadastrar Funcionário                   ===\n");
+        printf("===    [2] - Exibir Funcionários                      ===\n");
+        printf("===    [3] - Modificar Funcionário                   ===\n");
+        printf("===    [4] - Excluir Funcionário                     ===\n");
+        printf("===    [0] - Voltar ao Menu Principal                ===\n");
+        printf("===========================================================\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &op);
+        switch(op){
+            case 1:
+                cadastrar_funcionario();
+                break;
+            case 2:
+                exibir_funcionario();
+                break;
+            case 3:
+                modificar_funcionario();
+                break;
+            case 4:
+                excluir_funcionario();
+                break;
+            case 0:
+                printf("Voltando ao Menu Principal...\n");
+                break;
+            default:
+                printf("Opção inválida! Tente novamente.\n");
+        }
+    } while(op != 0);
 }
 
+
 void cadastrar_funcionario(void){
-    printf("\n");
+    char nome[50];
+    char cpf[20];
+    char data_nasc[11];
+    
+    printf("\n===========================================================\n");
+    printf("======═             Cadastrar Funcionário            ======\n");
     printf("===========================================================\n");
-    printf("=======             cadastrar funcionario            ======\n");
-    printf("===========================================================\n");
-    printf("=======            CPF:(inserir)(chave)              ======\n");
-    printf("=======            nome do Funcionario:(inserir)     ======\n");
-    printf("=======            data de nacimento:(inserir)       ======\n");
+    printf("Digite o nome do funcionário: ");
+    scanf(" %[^\n]", nome);
+    printf("Digite o CPF do funcionário: ");
+    scanf("%s", cpf);
+    printf("Digite a data de nascimento (DD/MM/AAAA): ");
+    scanf("%s", data_nasc);
     printf("===========================================================\n");
 }
 
