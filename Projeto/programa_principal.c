@@ -6,15 +6,20 @@
 int tela_main(void);
 int mod_vendas(void);
 int info_proj(void);
+
+
 int mod_func(void);
 int mod_prod(void);
-void tela_funcionario(void);
 int mod_client(void);
+
+//produto
 void tela_cadastrarp(void);
 void cadastrar_produto(void);
 void exibir_produto(void);
 void modificar_produto(void);
 void excluir_produto(void);
+
+//funcionario
 void cadastrar_funcionario(void);
 void exibir_funcionario(void);
 void modificar_funcionario(void);
@@ -28,14 +33,12 @@ int chamada(void){
     info_proj();
     mod_func();
     mod_prod();
-    mod_func();
     mod_client();
     tela_cadastrarp();
     cadastrar_produto();
     exibir_produto();
     modificar_produto();
     excluir_produto();
-    cadastrar_funcionario();
     exibir_funcionario();
     modificar_funcionario();
     excluir_funcionario();
@@ -87,6 +90,36 @@ int tela_main(){
   
 }
 
+int info_proj(){
+    int op;
+    printf("\n");
+    printf("===========================================================\n");
+    printf("=====   Universidade Federal Rio Grande do Norte      =====\n");
+    printf("=====   Diciplina: Programação,  codigo: DCT1106      =====\n");
+    printf("=====               Programa de Gestão                =====\n");
+    printf("=====   Para uma Loja de Material de Construção       =====\n");
+    printf("===========================================================\n");
+    printf("=====   O Projeto tem o objetivo Criar um programa    =====\n");
+    printf("=====   de Gestão para uma Loja de Materais           =====\n");
+    printf("=====   de Construção,tem como objetivo ajudar na     =====\n");
+    printf("=====   administração da loja,sendo possivel administa=====\n");
+    printf("=====   produtos,vendas,clientes,funcionarios e tambem=====\n");
+    printf("=====   relatorios                                    =====\n");
+    printf("===========================================================\n");
+
+    printf("\n");
+    printf("===========================================================\n");
+    printf("=====            Equipe de desenvolvimento            =====\n");
+    printf("===========================================================\n");
+    printf("=====            Leandro Sergio Da Silva              =====\n");
+    printf("=====            Arthur De Medeiros Dantas            =====\n");
+    printf("===========================================================\n");
+    getchar();
+    scanf("%i", &op);
+    printf("===                [0] - Sair                         =====\n");
+    return 0;
+}
+
 int mod_vendas(void){
     int op;
     printf("\n");
@@ -134,6 +167,7 @@ int mod_client(void){
     return 0;
 }
 
+
 void tela_cadastrarp(void){
     int resp;
     printf("\n");
@@ -161,53 +195,6 @@ void tela_cadastrarp(void){
     
 }
 
-
-int info_proj(){
-    int op;
-    printf("\n");
-    printf("===========================================================\n");
-    printf("=====   Universidade Federal Rio Grande do Norte      =====\n");
-    printf("=====   Diciplina: Programação,  codigo: DCT1106      =====\n");
-    printf("=====               Programa de Gestão                =====\n");
-    printf("=====   Para uma Loja de Material de Construção       =====\n");
-    printf("===========================================================\n");
-    printf("=====   O Projeto tem o objetivo Criar um programa    =====\n");
-    printf("=====   de Gestão para uma Loja de Materais           =====\n");
-    printf("=====   de Construção,tem como objetivo ajudar na     =====\n");
-    printf("=====   administração da loja,sendo possivel administa=====\n");
-    printf("=====   produtos,vendas,clientes,funcionarios e tambem=====\n");
-    printf("=====   relatorios                                    =====\n");
-    printf("===========================================================\n");
-
-    printf("\n");
-    printf("===========================================================\n");
-    printf("=====            Equipe de desenvolvimento            =====\n");
-    printf("===========================================================\n");
-    printf("=====            Leandro Sergio Da Silva              =====\n");
-    printf("=====            Arthur De Medeiros Dantas            =====\n");
-    printf("===========================================================\n");
-    getchar();
-    scanf("%i", &op);
-    printf("===                [0] - Sair                         =====\n");
-    return 0;
-}
-
-int mod_func(void){
-    int op;
-    printf("\n");
-    printf("===========================================================\n");
-    printf("=====                Funcionario                      =====\n");
-    printf("===========================================================\n");
-    printf("=====         [1] - cadastrar Funcionario             =====\n");
-    printf("=====         [2] - Exibir Funcionarios               =====\n");
-    printf("=====         [3] - modificar Funcionario             =====\n");
-    printf("=====         [4] - Excluir Funcionario               =====\n");
-    printf("=====         [0] - sair                              =====\n");
-    printf("===========================================================\n");
-    printf("Sua Escolha: --> ");
-    scanf("%d", &op);
-    return op;
-}
 
 int mod_prod(void){
     int op;
@@ -272,19 +259,21 @@ void excluir_produto(void){
     printf("===========================================================\n");
 }
 
-void tela_funcionario(void){
+int mod_func(void){
+    int op;
     printf("\n");
     printf("===========================================================\n");
-    printf("======═                Funcionario                   ======\n");
+    printf("=====                Funcionario                      =====\n");
     printf("===========================================================\n");
-    printf("======═         [1]-cadastrar Funcionario            ======\n");
-    printf("======═         [2]-Exibir Funcionarios              ======\n");
-    printf("======═         [3]-modificar Funcionario            ======\n");
-    printf("======═         [4]-Excluir Funcionario              ======\n");
-    printf("======═         [0]-sair                             ======\n");
+    printf("=====         [1] - cadastrar Funcionario             =====\n");
+    printf("=====         [2] - Exibir Funcionarios               =====\n");
+    printf("=====         [3] - modificar Funcionario             =====\n");
+    printf("=====         [4] - Excluir Funcionario               =====\n");
+    printf("=====         [0] - sair                              =====\n");
     printf("===========================================================\n");
-    printf("===========================================================\n");
-    printf("===========================================================\n");
+    printf("Sua Escolha: --> ");
+    scanf("%d", &op);
+    return op;
 }
 
 void cadastrar_funcionario(void){
