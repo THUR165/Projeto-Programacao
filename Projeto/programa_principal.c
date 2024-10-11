@@ -4,11 +4,17 @@
 
 //funções principais
 int tela_main(void);
-int mod_vendas(void);
+void mod_vendas(void);
 int info_proj(void);
 void mod_client(void);
 int mod_prod(void);
 void mod_func(void);
+
+// Vendas
+void cadastrar_venda(void);
+void exibir_venda(void);
+void modificar_venda(void);
+void excluir_venda(void);
 
 
 //cliente
@@ -104,25 +110,89 @@ int info_proj(){
 }
 
 //vendas
-int mod_vendas(void){
+void mod_vendas(void) {
     int op;
-    printf("\n");
-    printf("===========================================================\n");
-    printf("=====                   vendas                        =====\n");
-    printf("===========================================================\n");
-    printf("=====    Sistema de gestão de material de construção  =====\n");
-    printf("===========================================================\n");
-    printf("=====                [1] - Comprar produtos           =====\n");
-    printf("=====                [2] - Verificar Compras          =====\n");
-    printf("=====                [3] - Alterar Compras            =====\n");
-    printf("=====                [4] - Excluir Compras            =====\n");
-    printf("=====                [5] - Relatório                  =====\n");
-    printf("=====                [0] - Sair                       =====\n");
-    scanf("%i", &op);
-    printf("===========================================================\n");
-    return 0;
+    do {
+        printf("\n===========================================================\n");
+        printf("===                   Módulo de Vendas                =====\n");
+        printf("===========================================================\n");
+        printf("===    [1] - Cadastrar Venda                          ===\n");
+        printf("===    [2] - Exibir Venda                             ===\n");
+        printf("===    [3] - Modificar Venda                          ===\n");
+        printf("===    [4] - Excluir Venda                            ===\n");
+        printf("===    [0] - Voltar ao Menu Principal                 ===\n");
+        printf("===========================================================\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &op);
+        switch(op) {
+            case 1:
+                cadastrar_venda();
+                break;
+            case 2:
+                exibir_venda();
+                break;
+            case 3:
+                modificar_venda();
+                break;
+            case 4:
+                excluir_venda();
+                break;
+            case 0:
+                printf("Voltando ao Menu Principal...\n");
+                break;
+            default:
+                printf("Opção inválida! Tente novamente.\n");
+        }
+    } while(op != 0);
 }
 
+void cadastrar_venda(void) {
+    int codVenda;
+    float valor;
+    
+    printf("\n===========================================================\n");
+    printf("======═             Cadastrar Venda                  ======\n");
+    printf("===========================================================\n");
+    printf("Digite o código da venda: ");
+    scanf("%d", &codVenda);
+    printf("Digite o valor da venda: ");
+    scanf("%f", &valor);
+    printf("Venda cadastrada com sucesso!\n");
+    printf("===========================================================\n");
+}
+
+void exibir_venda(void) {
+    int codVenda;
+    
+    printf("\n===========================================================\n");
+    printf("======═             Exibir Venda                     ======\n");
+    printf("===========================================================\n");
+    printf("Digite o código da venda: ");
+    scanf("%d", &codVenda);
+    printf("===========================================================\n");
+}
+
+void modificar_venda(void) {
+    int codVenda;
+    
+    printf("\n===========================================================\n");
+    printf("======═             Modificar Venda                  ======\n");
+    printf("===========================================================\n");
+    printf("Digite o código da venda a ser modificada: ");
+    scanf("%d", &codVenda);
+    printf("===========================================================\n");
+}
+
+void excluir_venda(void) {
+    int codVenda;
+    
+    printf("\n===========================================================\n");
+    printf("======═             Excluir Venda                    ======\n");
+    printf("===========================================================\n");
+    printf("Digite o código da venda a ser excluída: ");
+    scanf("%d", &codVenda);
+    printf("===========================================================\n");
+}
 
 // modulo clientes
 void mod_client(void){
@@ -287,7 +357,6 @@ void modificar_produto(void){
 
 void excluir_produto(void){
     char codigo[20];
-    
     printf("\n===========================================================\n");
     printf("======═             Excluir Produto                  ======\n");
     printf("===========================================================\n");
@@ -338,7 +407,6 @@ void cadastrar_funcionario(void){
     char nome[50];
     char cpf[20];
     char data_nasc[11];
-    
     printf("\n===========================================================\n");
     printf("======═             Cadastrar Funcionário            ======\n");
     printf("===========================================================\n");
