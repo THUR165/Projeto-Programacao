@@ -217,13 +217,23 @@ int mod_prod(void) {
 
 
 void cadastrar_produto(void){
-    printf("\n");
+    char codigo[20];
+    char nome[50];
+    char preco;
+    
+    printf("\n===========================================================\n");
+    printf("======═             Cadastrar Produto                ======\n");
     printf("===========================================================\n");
-    printf("======═             cadastrar produto                ======\n");
-    printf("===========================================================\n");
-    printf("======═            codigo de barra:(inserir)(chave)  ======\n");
-    printf("======═            nome do produto:(inserir)         ======\n");
-    printf("======═            preço do produto:(inserir)        ======\n");
+    printf("Digite o código de barra: ");
+    scanf("%s", codigo);
+    printf("Digite o nome do produto: ");
+    scanf(" %[^\n]", nome);  // Lê uma string com espaços
+    printf("Digite o preço do produto: ");
+    scanf("%f", &preco);
+    printf("\nProduto cadastrado com sucesso!\n");
+    printf("Código: %s\n", codigo);
+    printf("Nome: %s\n", nome);
+    printf("Preço: %.2f\n", preco);
     printf("===========================================================\n");
 }
 
