@@ -313,7 +313,7 @@ int mod_prod(void) {
             default:
                 printf("Opção inválida! Tente novamente.\n");
         }
-    } while (op != 0);  // Continua no loop até o usuário escolher "Sair"
+    } while (op != 0);  
     
     return 0;
 }
@@ -329,9 +329,9 @@ void cadastrar_produto(void){
     printf("Digite o código de barra: ");
     scanf("%s", codigo);
     printf("Digite o nome do produto: ");
-    scanf(" %[^\n]", nome);  // Lê uma string com espaços
+    scanf(" %[^\n]", nome);  
     printf("Digite o preço do produto: ");
-    scanf("%f", &preco);   // Corrigido para ler um float
+    scanf("%f", &preco);   
     printf("===========================================================\n");
 }
 
