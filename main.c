@@ -3,7 +3,7 @@
 #include "Projeto/interface.h"
 
 //ERROR NA COPILAÇÃO/ NÃO TA CHAMANDO A FUNÇÃO DE TELA PRINCIPAL
-
+//gcc -o programa Projeto/interface.o main.o (apenas atalho para testes)
 //funções principais
 //programa principal
 int main(){
@@ -20,9 +20,10 @@ int main(){
                     break;
             case 4: tela_mod_prod();
                     break;
-            case 5: tela_info_proj();
-                    break;          
-        
+            case 5: tela_mod_relat();
+                    break;
+            case 6: tela_info_proj();
+                    break;    
         }
       }while (op !=0);
       printf("FIM DO PROGRAMA!\n");

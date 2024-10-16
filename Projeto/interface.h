@@ -9,5 +9,5 @@ int tela_mod_func();
 int tela_mod_prod();
 int tela_mod_vendas();
 int tela_info_proj();
-
+int tela_mod_relat();
 #endif

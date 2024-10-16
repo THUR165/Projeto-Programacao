@@ -94,6 +94,21 @@ int tela_mod_prod(void){
     return 0;
 }
 
+int tela_mod_relat(void){
+    int op;
+    printf("\n");
+    printf("===========================================================\n");
+    printf("=====                relatorio                        =====\n");
+    printf("===========================================================\n");
+    printf("=====         [1] - Relatorio Geral                   =====\n");
+    printf("=====         [0] - Sair                              =====\n");
+    printf("===========================================================\n");
+    printf("Sua Escolha: --> ");
+    scanf("%i", &op);
+    printf("===========================================================\n");
+    return 0;
+}
+
 int tela_mod_venda(void){
     int op;
     printf("\n");
@@ -114,6 +129,7 @@ int tela_mod_venda(void){
 }
 
 int tela_info_proj(void){
+    int op;
     printf("\n");
     printf("===========================================================\n");
     printf("=====   Universidade Federal Rio Grande do Norte      =====\n");
@@ -136,6 +152,7 @@ int tela_info_proj(void){
     printf("=====            Leandro Sergio Da Silva              =====\n");
     printf("=====            Arthur De Medeiros Dantas            =====\n");
     printf("===========================================================\n");
+    scanf("%i",&op);
     getchar();
     return 0;
 }
