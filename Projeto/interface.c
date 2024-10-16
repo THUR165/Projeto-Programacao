@@ -23,24 +23,42 @@ int tela_main(void){
     return op;
   
 }
-int tela_mod_cliente(){
+void tela_mod_cliente(void){
     int op;
-    printf("===========================================================\n");
-    printf("======                SIG-Building                    =====\n");
-    printf("===========================================================\n");
-    printf("======    Sistema de gestão de material de construção =====\n");
-    printf("===========================================================\n");
-    printf("======                [1] - Cadastrar Clientes        =====\n");
-    printf("======                [2] - Verificar Dados           =====\n");
-    printf("======                [3] - Alterar Dados             =====\n");
-    printf("======                [4] - Excluir Dados             =====\n");
-    printf("======                [5] - Relatório                 =====\n");
-    printf("======                [0] - Sair                      =====\n");
-    scanf("%i", &op);
-    printf("═══════════════════════════════════════════════════════════\n");
-    printf("===========================================================\n");
-    return 0;
+    do {
+        printf("\n===========================================================\n");
+        printf("===                Módulo de Clientes                =====\n");
+        printf("===========================================================\n");
+        printf("===    [1] - Cadastrar Clientes                      ===\n");
+        printf("===    [2] - Exibir Clientes                         ===\n");
+        printf("===    [3] - Modificar Clientes                      ===\n");
+        printf("===    [4] - Excluir Clientes                        ===\n");
+        printf("===    [0] - Voltar ao Menu Principal                ===\n");
+        printf("===========================================================\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &op);
+        switch(op){
+            case 1:
+                cadastrar_cliente();
+                break;
+            case 2:
+                exibir_cliente();
+                break;
+            case 3:
+                modificar_cliente();
+                break;
+            case 4:
+                excluir_cliente();
+                break;
+            case 0:
+                printf("Voltando ao Menu Principal...\n");
+                break;
+            default:
+                printf("Opção inválida! Tente novamente.\n");
+        }
+    } while(op != 0);
 }
+
 int tela_mod_vendas(void){
     int op;
     printf("\n");

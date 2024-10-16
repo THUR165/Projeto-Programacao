@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 #include "Projeto/interface.h"
+#include "Projeto/src/clientes/alterarc.h"
+#include "Projeto/src/clientes/cadastrarc.h"
+#include "Projeto/src/clientes/excluirc.h"
+#include "Projeto/src/clientes/verificarc.h"
 
 //ERROR NA COPILAÇÃO/ NÃO TA CHAMANDO A FUNÇÃO DE TELA PRINCIPAL
 //gcc -o programa Projeto/interface.o main.o (apenas atalho para testes)
