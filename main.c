@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "Projeto/interface.h"
+#include "Projeto/src/clientes/cadastrarc.h"
 
 //ERROR NA COPILAÇÃO/ NÃO TA CHAMANDO A FUNÇÃO DE TELA PRINCIPAL
 
@@ -13,6 +14,7 @@ int main(){
         op = tela_main();
         switch (op){
             case 1: tela_mod_cliente();
+                    mod_cliente();
                     break;
             case 2: tela_mod_vendas();
                     break;
