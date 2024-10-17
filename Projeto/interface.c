@@ -84,7 +84,7 @@ void tela_mod_func(void){
         printf("===               Módulo de Funcionários              =====\n");
         printf("===========================================================\n");
         printf("===    [1] - Cadastrar Funcionário                   ===\n");
-        printf("===    [2] - Exibir Funcionários                      ===\n");
+        printf("===    [2] - Exibir Funcionários                     ===\n");
         printf("===    [3] - Modificar Funcionário                   ===\n");
         printf("===    [4] - Excluir Funcionário                     ===\n");
         printf("===    [0] - Voltar ao Menu Principal                ===\n");
@@ -113,21 +113,43 @@ void tela_mod_func(void){
     } while(op != 0);
 }
 
-int tela_mod_prod(void){
+int tela_mod_prod(void) {
     int op;
-    printf("\n");
-    printf("===========================================================\n");
-    printf("=====                Produto                          =====\n");
-    printf("===========================================================\n");
-    printf("=====         [1] - Cadastrar produto                 =====\n");
-    printf("=====         [2] - Exibir produto                    =====\n");
-    printf("=====         [3] - Modificar produto                 =====\n");
-    printf("=====         [4] - Excluir produto                   =====\n");
-    printf("=====         [0] - Sair                              =====\n");
-    printf("===========================================================\n");
-    printf("Sua Escolha: --> ");
-    scanf("%i", &op);
-    printf("===========================================================\n");
+    do {
+        printf("\n");
+        printf("===========================================================\n");
+        printf("=====                Produto                          =====\n");
+        printf("===========================================================\n");
+        printf("=====         [1] - Cadastrar produto                 =====\n");
+        printf("=====         [2] - Exibir produto                    =====\n");
+        printf("=====         [3] - Modificar produto                 =====\n");
+        printf("=====         [4] - Excluir produto                   =====\n");
+        printf("=====         [0] - Sair                              =====\n");
+        printf("===========================================================\n");
+        printf("Sua Escolha: --> ");
+        scanf("%d", &op);
+        
+        switch(op) {
+            case 1:
+                cadastrar_produto();
+                break;
+            case 2:
+                exibir_produto();
+                break;
+            case 3:
+                modificar_produto();
+                break;
+            case 4:
+                excluir_produto();
+                break;
+            case 0:
+                printf("Saindo do módulo de produto...\n");
+                break;
+            default:
+                printf("Opção inválida! Tente novamente.\n");
+        }
+    } while (op != 0);  
+    
     return 0;
 }
 

@@ -5,8 +5,8 @@ void cadastrar_funcionario(void){
     char nome[50];
     char cpf[20];
     char data_nasc[11];
-    printf("\n===========================================================\n");
-    printf("======═             Cadastrar Funcionário            ======\n");
+    printf("\n=========================================================\n");
+    printf("=======             Cadastrar Funcionário            ======\n");
     printf("===========================================================\n");
     printf("Digite o nome do funcionário: ");
     scanf(" %[^\n]", nome);

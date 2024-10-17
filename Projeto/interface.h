@@ -20,4 +20,9 @@ void modificar_funcionario(void);
 void cadastrar_funcionario(void);
 void excluir_funcionario(void);
 void exibir_funcionario(void);
+
+void modificar_produto(void);
+void excluir_produto(void);
+void cadastrar_produto(void);
+void exibir_produto(void);
 #endif

@@ -3,7 +3,7 @@
 #include "alterarf.h"
 void modificar_funcionario(void){
     char cpf[20];
-    printf("\n===========================================================\n");
+    printf("\n=========================================================\n");
     printf("======═             Modificar Funcionário            ======\n");
     printf("===========================================================\n");
     printf("Digite o CPF do funcionário a ser modificado: ");

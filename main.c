@@ -11,6 +11,11 @@
 #include "Projeto/src/funcionarios/cadastrarf.h"
 #include "Projeto/src/funcionarios/excluirf.h"
 #include "Projeto/src/funcionarios/verificarf.h"
+//assinatura para modulo produtos
+#include "Projeto/src/produto/alterarp.h"
+#include "Projeto/src/produto/excluirp.h"
+#include "Projeto/src/produto/cadastrarp.h"
+#include "Projeto/src/produto/verificarp.h"
 
 //ERROR NA COPILAÇÃO/ NÃO TA CHAMANDO A FUNÇÃO DE TELA PRINCIPAL
 //gcc -o programa Projeto/interface.o main.o (apenas atalho para testes)
