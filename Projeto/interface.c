@@ -77,21 +77,40 @@ int tela_mod_vendas(void){
     return 0;
 }
 
-int tela_mod_func(void){
+void tela_mod_func(void){
     int op;
-    printf("\n");
-    printf("===========================================================\n");
-    printf("=====                Funcionario                      =====\n");
-    printf("===========================================================\n");
-    printf("=====         [1] - cadastrar Funcionario             =====\n");
-    printf("=====         [2] - Exibir Funcionarios               =====\n");
-    printf("=====         [3] - modificar Funcionario             =====\n");
-    printf("=====         [4] - Excluir Funcionario               =====\n");
-    printf("=====         [0] - sair                              =====\n");
-    printf("===========================================================\n");
-    printf("Sua Escolha: --> ");
-    scanf("%d", &op);
-    return op;
+    do {
+        printf("\n===========================================================\n");
+        printf("===               Módulo de Funcionários              =====\n");
+        printf("===========================================================\n");
+        printf("===    [1] - Cadastrar Funcionário                   ===\n");
+        printf("===    [2] - Exibir Funcionários                      ===\n");
+        printf("===    [3] - Modificar Funcionário                   ===\n");
+        printf("===    [4] - Excluir Funcionário                     ===\n");
+        printf("===    [0] - Voltar ao Menu Principal                ===\n");
+        printf("===========================================================\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &op);
+        switch(op){
+            case 1:
+                cadastrar_funcionario();
+                break;
+            case 2:
+                exibir_funcionario();
+                break;
+            case 3:
+                modificar_funcionario();
+                break;
+            case 4:
+                excluir_funcionario();
+                break;
+            case 0:
+                printf("Voltando ao Menu Principal...\n");
+                break;
+            default:
+                printf("Opção inválida! Tente novamente.\n");
+        }
+    } while(op != 0);
 }
 
 int tela_mod_prod(void){

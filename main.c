@@ -1,10 +1,16 @@
 #include <stdio.h>
 #include <string.h>
 #include "Projeto/interface.h"
+//assinatura para o modulo cliente
 #include "Projeto/src/clientes/alterarc.h"
 #include "Projeto/src/clientes/cadastrarc.h"
 #include "Projeto/src/clientes/excluirc.h"
 #include "Projeto/src/clientes/verificarc.h"
+//assinatura para o modulo funcionario
+#include "Projeto/src/funcionarios/alterarf.h"
+#include "Projeto/src/funcionarios/cadastrarf.h"
+#include "Projeto/src/funcionarios/excluirf.h"
+#include "Projeto/src/funcionarios/verificarf.h"
 
 //ERROR NA COPILAÇÃO/ NÃO TA CHAMANDO A FUNÇÃO DE TELA PRINCIPAL
 //gcc -o programa Projeto/interface.o main.o (apenas atalho para testes)
