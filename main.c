@@ -13,8 +13,8 @@ int main(){
       do {
         op = tela_main();
         switch (op){
-            case 1: tela_mod_cliente();
-                    mod_cliente();
+            case 1: 
+                    tela_mod_cliente();           ;
                     break;
             case 2: tela_mod_vendas();
                     break;

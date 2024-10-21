@@ -2,8 +2,19 @@
 #include "interface.h"
 //Criar um mod relatorio: relatorio clientes,vendas,produtos e funcionários.
 
+
+//void limpaTela(void) {
+   // if (system("clear") || system("cls")) {
+        // limpa a tela, Linux, Mac e Windows
+  //  }
+//}
+
+
+
+
 int tela_main(void){
     int op;
+    //limpaTela();
     printf("\n");
     printf("===========================================================\n");
     printf("=====                SIG-Building                     =====\n");
@@ -25,6 +36,7 @@ int tela_main(void){
 }
 int tela_mod_cliente(){
     int op;
+    //limpaTela();
     printf("===========================================================\n");
     printf("======                SIG-Building                    =====\n");
     printf("===========================================================\n");
@@ -36,13 +48,15 @@ int tela_mod_cliente(){
     printf("======                [4] - Excluir Dados             =====\n");
     printf("======                [5] - Relatório                 =====\n");
     printf("======                [0] - Sair                      =====\n");
+    printf("===========================================================\n");
     scanf("%i", &op);
-    printf("═══════════════════════════════════════════════════════════\n");
+    
     
     return 0;
 }
 int tela_mod_vendas(void){
     int op;
+    //limpaTela();
     printf("\n");
     printf("===========================================================\n");
     printf("=====                SIG-Building                     =====\n");
@@ -61,6 +75,7 @@ int tela_mod_vendas(void){
 
 int tela_mod_func(void){
     int op;
+    //limpaTela();
     printf("\n");
     printf("===========================================================\n");
     printf("=====                Funcionario                      =====\n");
@@ -78,6 +93,7 @@ int tela_mod_func(void){
 
 int tela_mod_prod(void){
     int op;
+    //limpaTela();
     printf("\n");
     printf("===========================================================\n");
     printf("=====                Produto                          =====\n");
@@ -96,6 +112,7 @@ int tela_mod_prod(void){
 
 int tela_mod_venda(void){
     int op;
+    //limpaTela();
     printf("\n");
     printf("===========================================================\n");
     printf("=====                SIG-Building                     =====\n");

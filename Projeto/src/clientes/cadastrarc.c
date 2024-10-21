@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int clientes(void){
+int cad_client(void){
     printf("Cadastramento de Clientes\n");
     printf("Cadastramento de Clientes\n");
     printf("Cadastramento de Clientes\n");
