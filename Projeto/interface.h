@@ -7,7 +7,7 @@ int tela_main();
 void tela_mod_cliente();
 void tela_mod_func();
 int tela_mod_prod();
-int tela_mod_vendas();
+void tela_mod_vendas();
 int tela_info_proj();
 int tela_mod_relat();
 
@@ -25,4 +25,9 @@ void modificar_produto(void);
 void excluir_produto(void);
 void cadastrar_produto(void);
 void exibir_produto(void);
+
+void modificar_venda(void);
+void cadastrar_venda(void);
+void excluir_venda(void);
+void exibir_venda(void);
 #endif

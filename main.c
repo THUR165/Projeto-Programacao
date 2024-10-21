@@ -16,6 +16,11 @@
 #include "Projeto/src/produto/excluirp.h"
 #include "Projeto/src/produto/cadastrarp.h"
 #include "Projeto/src/produto/verificarp.h"
+//assinatura para modulo vendas
+#include "Projeto/src/vendas/alterarav.h"
+#include "Projeto/src/vendas/cadastrarv.h"
+#include "Projeto/src/vendas/excluirv.h"
+#include "Projeto/src/vendas/verificarv.h"
 
 //ERROR NA COPILAÇÃO/ NÃO TA CHAMANDO A FUNÇÃO DE TELA PRINCIPAL
 //gcc -o programa Projeto/interface.o main.o (apenas atalho para testes)
