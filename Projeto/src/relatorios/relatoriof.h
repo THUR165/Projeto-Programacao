@@ -2,5 +2,5 @@
 #define ALTERAR_R
 
 
-void relatorio_cliente(void);
+void relatorio_funcionarios(void);
 #endif

@@ -21,6 +21,11 @@
 #include "Projeto/src/vendas/cadastrarv.h"
 #include "Projeto/src/vendas/excluirv.h"
 #include "Projeto/src/vendas/verificarv.h"
+//assinatura para modulo de relatorios
+#include "Projeto/src/relatorios/relatorioc.h"
+#include "Projeto/src/relatorios/relatoriof.h"
+#include "Projeto/src/relatorios/relatoriop.h"
+#include "Projeto/src/relatorios/relatoriov.h"
 
 //ERROR NA COPILAÇÃO/ NÃO TA CHAMANDO A FUNÇÃO DE TELA PRINCIPAL
 //gcc -o programa Projeto/interface.o main.o (apenas atalho para testes)
