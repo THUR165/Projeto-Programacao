@@ -171,18 +171,42 @@ int tela_mod_prod(void) {
     return 0;
 }
 
-int tela_mod_relat(void){
+int tela_mod_relat(void) {
     int op;
     printf("\n");
     printf("===========================================================\n");
-    printf("=====                relatorio                        =====\n");
+    printf("=====                Relatório                          =====\n");
     printf("===========================================================\n");
-    printf("=====         [1] - Relatorio Geral                   =====\n");
+    printf("=====         [1] - relatorio geral de clientes       =====\n");
+    printf("=====         [2] - relatorio geral de vendas         =====\n");
+    printf("=====         [3] - relatorio geral de produtos       =====\n");
+    printf("=====         [4] - relatorio geral de funcionarios   =====\n");
     printf("=====         [0] - Sair                              =====\n");
     printf("===========================================================\n");
     printf("Sua Escolha: --> ");
     scanf("%i", &op);
     printf("===========================================================\n");
+
+    switch (op) {
+        case 1:
+            relatorio_cliente();
+            break;
+        case 2:
+            relatorio_vendas();
+            break;
+        case 3:
+            relatorio_produtos();
+            break;
+        case 4:
+            relatorio_funcionarios();
+            break;
+        case 0:
+            printf("Saindo...\n");
+            exit(0);
+            break;
+        default:
+            printf("Opção inválida! Tente novamente.\n");
+    }
     return 0;
 }
 
