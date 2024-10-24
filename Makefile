@@ -6,9 +6,9 @@ CFLAGS = -Wall -g
 SRC_CLIENTES = Projeto/src/clientes/cadastrarc.c
 SRC_FUNCIONARIOS = Projeto/src/funcionario/cadastrarf.c
 SRC_PRODUTOS = Projeto/src/produto/cadastrarp.c
-SRC_VENDAS = src/vendas/cadastrarv.c
-SRC_RELATORIO = src/relatorio.c
-SRC_SOBRE = src/sobre.c
+SRC_VENDAS = Projeto/src/vendas/cadastrarv.c
+SRC_RELATORIO = Projeto/src/relatorio.c
+SRC_SOBRE = Projeto/src/sobre.c
 
 # Arquivos do projeto principal
 SRC_INTERFACE = Projeto/interface.c
