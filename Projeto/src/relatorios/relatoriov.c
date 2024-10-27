@@ -7,7 +7,7 @@ void relatorio_vendas(void) {
     printf("===========================================================\n");
     printf("=====                 Relatório de Vendas             =====\n");
     printf("===========================================================\n");
-    printf("ainda em desemvolvimento,precione 0 para voltar:           ");
+    printf("ainda em desemvolvimento,precione 0 para voltar:             ");
     scanf("%s", codigo);
     // Aqui sera adicionado o codigo para o relatorio de vendas
     printf("===========================================================\n");

@@ -7,7 +7,7 @@ void relatorio_funcionarios(void) {
     printf("===========================================================\n");
     printf("=====              Relatório de Funcionários          =====\n");
     printf("===========================================================\n");
-    printf("ainda em desemvolvimento,precione 0 para voltar:           ");
+    printf("ainda em desemvolvimento,precione 0 para voltar:             ");
     scanf("%s", codigo);
     // Aqui sera adicionado o codigo para o relatorio de funcionarios
     printf("===========================================================\n");
