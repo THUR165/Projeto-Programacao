@@ -7,9 +7,15 @@ Este projeto é um sistema de gestão desenvolvido para uma loja de materiais de
 O sistema permite o gerenciamento de produtos, clientes, vendas e relatórios, facilitando o controle de estoque e o acompanhamento das vendas na loja.
 </p>
 
-<h2>ESTRUTURA E MODULARIZAÇÃO </h2>  
+<h2>ESTRUTURA, MODULARIZAÇÃO E COMPILAÇÃO: </h2>  
 <p>
 O projeto está organizado de forma modular, com cada funcionalidade principal separada em pastas específicas, facilitando o desenvolvimento e a manutenção do código.
+
+LINUX MINT:
+Use o Makefile através do comando "make" ,e em seguida use o comando "./main"
+
+WINDOWS 64Bit:
+
 </p>
 
 <h2>TECNOLOGIAS UTILIZADAS </h2>  
