@@ -12,7 +12,7 @@ O sistema permite o gerenciamento de produtos, clientes, vendas e relatórios, f
 O projeto está organizado de forma modular, com cada funcionalidade principal separada em pastas específicas, facilitando o desenvolvimento e a manutenção do código.
 
 LINUX MINT:
-Use o Makefile atravez do comando "make" e em seguida use o comando "./main"
+Use o Makefile através do comando "make" ,e em seguida use o comando "./main"
 
 WINDOWS 64Bit:
 
