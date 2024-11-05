@@ -49,6 +49,9 @@ int main(){
                     break;
             case 6: tela_info_proj();
                     break;    
+            default: 
+                printf("Opção inválida! Tente novamente.\n");
+                break;
         }
       }while (op !=0);
       printf("FIM DO PROGRAMA!\n");

@@ -8,7 +8,7 @@ void tela_mod_cliente();
 void tela_mod_func();
 int tela_mod_prod();
 void tela_mod_vendas();
-int tela_info_proj();
+void tela_info_proj();
 void tela_mod_relat();
 
 void modificar_cliente(void);
@@ -35,4 +35,5 @@ void relatorio_produtos(void);
 void relatorio_funcionarios(void);
 void relatorio_vendas(void);
 void relatorio_cliente(void);
+
 #endif

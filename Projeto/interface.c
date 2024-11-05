@@ -232,8 +232,7 @@ int tela_mod_venda(void){
     return 0;
 }
 
-int tela_info_proj(void){
-    int op;
+void tela_info_proj(void){
     printf("\n");
     printf("===========================================================\n");
     printf("=====   Universidade Federal Rio Grande do Norte      =====\n");
@@ -259,5 +258,4 @@ int tela_info_proj(void){
     printf("Pressione Enter para continuar\n");
     getchar();
     getchar();
-    return 0;
 }
