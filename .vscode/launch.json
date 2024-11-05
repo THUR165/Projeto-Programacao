@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Leo/Documents/GitHub/SIG-BUILDING/projeto",
-      "program": "c:/Users/Leo/Documents/GitHub/SIG-BUILDING/projeto/build/Debug/outDebug",
+      "cwd": "c:/Users/Leo/Documents/GitHub/Projeto-Programacao/Projeto/src/clientes",
+      "program": "c:/Users/Leo/Documents/GitHub/Projeto-Programacao/Projeto/src/clientes/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
