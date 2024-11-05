@@ -48,6 +48,9 @@ int main(){
             case 5: tela_mod_relat();
                     break;
             case 6: tela_info_proj();
+                    break;
+            case 0:
+                printf("Saindo...\n");
                     break;    
             default: 
                 printf("Opção inválida! Tente novamente.\n");
