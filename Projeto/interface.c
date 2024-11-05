@@ -256,7 +256,8 @@ int tela_info_proj(void){
     printf("=====            Leandro Sergio Da Silva              =====\n");
     printf("=====            Arthur De Medeiros Dantas            =====\n");
     printf("===========================================================\n");
-    scanf("%i",&op);
+    printf("Pressione Enter para continuar\n");
+    getchar();
     getchar();
     return 0;
 }
