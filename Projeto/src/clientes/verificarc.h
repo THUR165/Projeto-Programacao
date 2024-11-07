@@ -2,5 +2,5 @@
 #define ALTERAR_H
 
 
-void exibir_cliente(void);
+//void exibir_cliente(Cliente *clientes, int num_clientes);
 #endif

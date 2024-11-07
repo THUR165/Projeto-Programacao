@@ -1,5 +1,7 @@
 #include <stdio.h>
+#include <string.h>
 #include "interface.h"
+#include "src\clientes\cadastrarc.h"
 //Criar um mod relatorio: relatorio clientes,vendas,produtos e funcionários.
 
 int tela_main(void){
@@ -39,10 +41,10 @@ void tela_mod_cliente(void){
         scanf("%d", &op);
         switch(op){
             case 1:
-                cadastrar_cliente();
+                cad_client();
                 break;
             case 2:
-                exibir_cliente();
+                //exibir_cliente();
                 break;
             case 3:
                 modificar_cliente();
