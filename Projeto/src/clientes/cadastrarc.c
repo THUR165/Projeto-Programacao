@@ -12,7 +12,6 @@ Telefone:
 Rua:
 */
 
-
 Cliente cad_client(void) {
     Cliente cliente;
 
@@ -38,6 +37,9 @@ Cliente cad_client(void) {
     printf("Digite o nome da Rua: -> \n");
     scanf(" %[^\n]", cliente.rua);
 
+    printf("Digite o número da casa: -> \n");
+    scanf("%[^\n]", cliente.num);
+
 
     printf("\nInformações do Cliente:\n");
     printf("Nome: %s\n", cliente.nome);
@@ -46,11 +48,10 @@ Cliente cad_client(void) {
     printf("Gênero: %s\n", cliente.gen);
     printf("Telefone: %s\n", cliente.tel);
     printf("Rua: %s\n", cliente.rua);
+    printf("Numero da Casa: %s\n", cliente.num);
 
     return cliente;
 }
-
-/*
 void imprimir_client(Cliente cliente) {
     printf("\nInformações do Cliente:\n");
     printf("Nome: %s\n", cliente.nome);
@@ -60,7 +61,7 @@ void imprimir_client(Cliente cliente) {
     printf("Telefone: %s\n", cliente.tel);
     printf("Rua: %s\n", cliente.rua);
 }
-*/
+
 
 void liberar_client(Cliente cliente) {
     free(cliente.nome);
