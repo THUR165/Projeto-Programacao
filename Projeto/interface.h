@@ -1,6 +1,7 @@
-
+#include "src\clientes\cadastrarc.h"
 #ifndef INTERFACE_H
 #define INTERFACE_H
+
 
 int tela_main();
 void tela_mod_cliente(Cliente *clientes, int size);

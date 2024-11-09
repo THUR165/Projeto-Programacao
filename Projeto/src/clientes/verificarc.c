@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "src/clientes/cadastrarc.h"
+#include "../clientes/cadastrarc.h"
 
 // Função para buscar e exibir informações do cliente pelo CPF
 Cliente exibir_cliente(Cliente *clientes, int size, const char *cpf_busca) {
@@ -16,8 +16,6 @@ Cliente exibir_cliente(Cliente *clientes, int size, const char *cpf_busca) {
             printf("Número da casa: %s\n", clientes[i].num);
             
             // Liberando memória alocada dinamicamente
-            free(clientes[i].nome);
-            free(clientes[i].rua);
             
             return clientes[i];  // Retorna o cliente encontrado
         }
