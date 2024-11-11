@@ -4,7 +4,7 @@
 
 
 int tela_main();
-void tela_mod_cliente(Cliente *clientes, int size);
+void tela_mod_cliente();
 void tela_mod_func();
 int tela_mod_prod();
 void tela_mod_vendas();
