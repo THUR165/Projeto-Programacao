@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <string.h>
+#include <locale.h>
+#include <ctype.h>
 #include "Projeto/interface.h"
+#include "Projeto/valida.h"
 //assinatura para o modulo cliente
 #include "Projeto/src/clientes/alterarc.h"
 #include "Projeto/src/clientes/cadastrarc.h"
@@ -32,6 +35,8 @@
 //funções principais
 //programa principal
 int main(){
+
+    setlocale(LC_ALL, "pt_BR.UTF-8");
     int op;
     printf("Iniciando o programa...\n");
       do {
