@@ -5,8 +5,9 @@
 
 //Criar um mod relatorio: relatorio clientes,vendas,produtos e funcionários.
 
-int tela_main(void){
+int tela_main(void){    
     int op;
+    //system("clear || cls");
     printf("\n");
     printf("===========================================================\n");
     printf("=====                SIG-Building                     =====\n");
@@ -24,6 +25,8 @@ int tela_main(void){
     scanf("%d", &op);
     printf("===========================================================\n");
     return op;
+    //erro, falta um defaut...
+    //laço rodando infinito ): 
   
 }
 
