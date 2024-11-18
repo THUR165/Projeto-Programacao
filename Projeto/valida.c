@@ -1,1 +1,6 @@
-//funções de validação sera colocadas aqui
+#ifndef VALIDA_H
+#define VALIDA_H
+
+//FUNÇÕES DE VALIDAÇÕES...
+
+#endif

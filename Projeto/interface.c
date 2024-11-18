@@ -1,9 +1,13 @@
 #include <stdio.h>
+#include <string.h>
 #include "interface.h"
+#include "src\clientes\cadastrarc.h"
+
 //Criar um mod relatorio: relatorio clientes,vendas,produtos e funcionários.
 
-int tela_main(void){
+int tela_main(void){    
     int op;
+    //system("clear || cls");
     printf("\n");
     printf("===========================================================\n");
     printf("=====                SIG-Building                     =====\n");
@@ -21,9 +25,14 @@ int tela_main(void){
     scanf("%d", &op);
     printf("===========================================================\n");
     return op;
+    //erro, falta um defaut...
+    //laço rodando infinito ): 
   
 }
-void tela_mod_cliente(void){
+
+
+
+void tela_mod_cliente(Cliente *clientes, int size){
     int op;
     do {
         printf("\n===========================================================\n");
@@ -39,11 +48,15 @@ void tela_mod_cliente(void){
         scanf("%d", &op);
         switch(op){
             case 1:
-                cadastrar_cliente();
+                cad_client();
                 break;
-            case 2:
-                exibir_cliente();
+            case 2:{
+                char cpf_busca[15];
+                printf("Digite o CPF do cliente que deseja buscar: ");
+                scanf("%s", cpf_busca);
+                exibir_cliente(clientes, size, cpf_busca);
                 break;
+            }            
             case 3:
                 modificar_cliente();
                 break;
@@ -255,7 +268,7 @@ void tela_info_proj(void){
     printf("=====            Leandro Sergio Da Silva              =====\n");
     printf("=====            Arthur De Medeiros Dantas            =====\n");
     printf("===========================================================\n");
-    printf("Pressione Enter para continuar\n");
+    printf("Pressione <ENTER> para continuar\n");
     getchar();
     getchar();
 }
