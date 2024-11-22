@@ -1,7 +1,7 @@
+#include "src\clientes\cadastrarc.h"
 #ifndef INTERFACE_H
 #define INTERFACE_H
 
-#include <stdio.h>
 
 int tela_main();
 void tela_mod_cliente();
@@ -12,9 +12,8 @@ void tela_info_proj();
 void tela_mod_relat();
 
 void modificar_cliente(void);
-void cadastrar_cliente(void);
 void excluir_cliente(void);
-void exibir_cliente(void);
+
 
 void modificar_funcionario(void);
 void cadastrar_funcionario(void);

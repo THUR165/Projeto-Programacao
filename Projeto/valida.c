@@ -1,5 +1,5 @@
-// ------------ Funções de validação serão colocadas aqui -------------
-// Estão faltando: validação de datas (atual e validade), validação de códigos de barra 
+#ifndef VALIDA_H
+#define VALIDA_H
 
 //Bibliotecas
 #include <stdio.h>
@@ -9,7 +9,7 @@
 #include <locale.h>
 #include <time.h>
 
-//Funções de validação 
+//FUNÇÕES DE VALIDAÇÕES...
 
 // --- Função que identifica se cada caractere digitado no nome é válido, incluindo acentos e 'ç'desenvolvida pelo ChatGPT, acesso em 11/11/2024: 
 // --- Desenvolvida pelo ChatGPT; acesso em 11/11/2024
@@ -132,3 +132,5 @@ int validar_data_nascimento(char data_nascimento[11]) {
 
     return 0; // Pessoa não tem 18 anos
 }
+
+#endif

@@ -4,6 +4,7 @@
 #include <ctype.h>
 #include "Projeto/interface.h"
 #include "Projeto/valida.h"
+
 //assinatura para o modulo cliente
 #include "Projeto/src/clientes/alterarc.h"
 #include "Projeto/src/clientes/cadastrarc.h"
@@ -30,10 +31,7 @@
 #include "Projeto/src/relatorios/relatoriop.h"
 #include "Projeto/src/relatorios/relatoriov.h"
 
-//ERROR NA COPILAÇÃO/ NÃO TA CHAMANDO A FUNÇÃO DE TELA PRINCIPAL
-//gcc -o programa Projeto/interface.o main.o (apenas atalho para testes)
-//funções principais
-//programa principal
+
 int main(){
 
     setlocale(LC_ALL, "pt_BR.UTF-8");
@@ -42,7 +40,7 @@ int main(){
       do {
         op = tela_main();
         switch (op){
-            case 1: tela_mod_cliente();
+            case 1: tela_mod_cliente(); //erro no parametro da função.
                     break;
             case 2: tela_mod_vendas();
                     break;
