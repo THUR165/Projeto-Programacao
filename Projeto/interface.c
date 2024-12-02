@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "interface.h"
-#include "src\clientes\cadastrarc.h"
+#include "src/clientes/cadastrarc.h"
 
 //Criar um mod relatorio: relatorio clientes,vendas,produtos e funcionários.
 
