@@ -7,7 +7,6 @@
 
 int tela_main(void){    
     int op;
-    //system("clear || cls");
     printf("\n");
     printf("===========================================================\n");
     printf("=====                SIG-Building                     =====\n");
@@ -21,19 +20,21 @@ int tela_main(void){
     printf("=====                [5] - Relatório                  =====\n");
     printf("=====                [6] - Sobre o Projeto            =====\n");
     printf("=====                [0] - Sair                       =====\n");
-    printf("Sua Escolha: --> ");
-    scanf("%d", &op);
     printf("===========================================================\n");
+    printf("Sua Escolha: --> ");
+
+    if (scanf("%d", &op) != 1) {  // Valida se a entrada foi um número
+        while (getchar() != '\n');  // Limpa o buffer de entrada
+        return -1;  // Retorna um valor fora do intervalo esperado para indicar erro
+    }
+
     return op;
-    //erro, falta um defaut...
-    //laço rodando infinito ): 
-  
 }
 
 
-
-void tela_mod_cliente(Cliente *clientes, int size){
+void tela_mod_cliente(void *clientes, int size) {
     int op;
+
     do {
         printf("\n===========================================================\n");
         printf("===                Módulo de Clientes                =====\n");
@@ -45,67 +46,80 @@ void tela_mod_cliente(Cliente *clientes, int size){
         printf("===    [0] - Voltar ao Menu Principal                ===\n");
         printf("===========================================================\n");
         printf("Escolha uma opção: ");
-        scanf("%d", &op);
-        switch(op){
-            case 1:
-                cad_client();
-                break;
-            case 2:{
-                char cpf_busca[15];
-                printf("Digite o CPF do cliente que deseja buscar: ");
-                scanf("%s", cpf_busca);
-                exibir_cliente(clientes, size, cpf_busca);
-                break;
-            }            
-            case 3:
-                modificar_cliente();
-                break;
-            case 4:
-                excluir_cliente();
-                break;
-            case 0:
-                printf("Voltando ao Menu Principal...\n");
-                break;
-            default:
-                printf("Opção inválida! Tente novamente.\n");
-        }
-    } while(op != 0);
-}
 
+        if (scanf("%d", &op) != 1) {  // Verifica se a entrada é um número
+            printf("Entrada inválida! Por favor, insira um número.\n");
+            while (getchar() != '\n');  // Limpa o buffer de entrada
+            continue;  // Retorna ao início do loop
+        }
+
+        if (op >= 0 && op <= 4) {  // Verifica se a opção está no intervalo permitido
+            switch (op) {
+                case 1:
+                    cad_client();
+                    break;
+                case 2: {
+                    char cpf_busca[15];
+                    printf("Digite o CPF do cliente que deseja buscar: ");
+                    scanf("%s", cpf_busca);
+                    exibir_cliente(clientes, size, cpf_busca);
+                    break;
+                }
+                case 3:
+                    modificar_cliente();
+                    break;
+                case 4:
+                    excluir_cliente();
+                    break;
+                case 0:
+                    printf("Voltando ao Menu Principal...\n");
+                    break;
+            }
+        } else {
+            printf("Opção inválida! Tente novamente.\n");
+        }
+    } while (op != 0);
+}
 void tela_mod_vendas(void) {
     int op;
     do {
-        printf("\n===========================================================\n");
-        printf("===                   Módulo de Vendas                =====\n");
+        printf("\n");
         printf("===========================================================\n");
-        printf("===    [1] - Cadastrar Venda                          ===\n");
-        printf("===    [2] - Exibir Venda                             ===\n");
-        printf("===    [3] - Modificar Venda                          ===\n");
-        printf("===    [4] - Excluir Venda                            ===\n");
-        printf("===    [0] - Voltar ao Menu Principal                 ===\n");
+        printf("=====                SIG-Building                     =====\n");
         printf("===========================================================\n");
+        printf("=====    Sistema de gestão de material de construção  =====\n");
+        printf("===========================================================\n");
+        printf("=====                [1] - Comprar produtos           =====\n");
+        printf("=====                [2] - Verificar Compras          =====\n");
+        printf("=====                [0] - Sair                       =====\n");
+        printf("===========================================================\n");
+
         printf("Escolha uma opção: ");
-        scanf("%d", &op);
-        switch(op) {
-            case 1:
+
+        if (scanf("%d", &op) != 1) {  // Verifica se a entrada é um número
+            printf("Entrada inválida! Por favor, insira um número.\n");
+            while (getchar() != '\n');  // Limpa o buffer de entrada
+            continue;  // Retorna ao início do loop
+        }
+
+        if (op >= 0 && op <= 4) {  // Verifica se a opção está no intervalo permitido
+            switch (op) {
+                case 1:
                 cadastrar_venda();
                 break;
             case 2:
                 exibir_venda();
                 break;
-            case 3:
-                modificar_venda();
-                break;
-            case 4:
-                excluir_venda();
-                break;
             case 0:
                 printf("Voltando ao Menu Principal...\n");
                 break;
-            default:
-                printf("Opção inválida! Tente novamente.\n");
+                
+            }
+        } else {
+            printf("Opção inválida! Tente novamente.\n");
         }
-    } while(op != 0);
+    } while (op != 0);
+    
 }
 
 void tela_mod_func(void){
@@ -121,8 +135,14 @@ void tela_mod_func(void){
         printf("===    [0] - Voltar ao Menu Principal                ===\n");
         printf("===========================================================\n");
         printf("Escolha uma opção: ");
-        scanf("%d", &op);
-        switch(op){
+
+        if (scanf("%d", &op) != 1) {  // Verifica se a entrada é um número
+            printf("Entrada inválida! Por favor, insira um número.\n");
+            while (getchar() != '\n');  // Limpa o buffer de entrada
+            continue;  // Retorna ao início do loop
+        }
+        if (op >= 0 && op <= 4){
+            switch(op){
             case 1:
                 cadastrar_funcionario();
                 break;
@@ -138,9 +158,11 @@ void tela_mod_func(void){
             case 0:
                 printf("Voltando ao Menu Principal...\n");
                 break;
-            default:
-                printf("Opção inválida! Tente novamente.\n");
+            }
+        }else {
+            printf("Opção inválida! Tente novamente.\n");
         }
+        
     } while(op != 0);
 }
 
@@ -158,9 +180,14 @@ int tela_mod_prod(void) {
         printf("=====         [0] - Sair                              =====\n");
         printf("===========================================================\n");
         printf("Sua Escolha: --> ");
-        scanf("%d", &op);
         
-        switch(op) {
+        if (scanf("%d", &op) != 1) {  // Verifica se a entrada é um número
+            printf("Entrada inválida! Por favor, insira um número.\n");
+            while (getchar() != '\n');  // Limpa o buffer de entrada
+            continue;  // Retorna ao início do loop
+        }
+        if (op >= 0 && op <= 4){
+            switch(op) {
             case 1:
                 cadastrar_produto();
                 break;
@@ -176,12 +203,13 @@ int tela_mod_prod(void) {
             case 0:
                 printf("Saindo do módulo de produto...\n");
                 break;
-            default:
-                printf("Opção inválida! Tente novamente.\n");
+            }
+
+        }else{
+            printf("Opção inválida! Tente novamente.\n");
         }
+        
     } while (op != 0);  
-    
-    return 0;
 }
 
 void tela_mod_relat(void) {
@@ -199,10 +227,14 @@ void tela_mod_relat(void) {
         printf("=====         [0] - Sair                                =====\n");
         printf("===========================================================\n");
         printf("Sua Escolha: --> ");
-        scanf("%i", &op);
-        printf("===========================================================\n");
 
-        switch (op) {
+        if (scanf("%d", &op) != 1) {  // Verifica se a entrada é um número
+            printf("Entrada inválida! Por favor, insira um número.\n");
+            while (getchar() != '\n');  // Limpa o buffer de entrada
+            continue;  // Retorna ao início do loop
+        }
+        if (op >= 0 && op <= 4){
+            switch (op) {
             case 1:
                 relatorio_cliente();  
                 break;
@@ -218,32 +250,15 @@ void tela_mod_relat(void) {
             case 0:
                 printf("Saindo...\n");
                 break;
-            default:
-                printf("Opção inválida! Tente novamente.\n");
+            }
+        }else{
+             printf("Opção inválida! Tente novamente.\n");
         }
-
     } while (op != 0);  
 }
 
 
-int tela_mod_venda(void){
-    int op;
-    printf("\n");
-    printf("===========================================================\n");
-    printf("=====                SIG-Building                     =====\n");
-    printf("===========================================================\n");
-    printf("=====    Sistema de gestão de material de construção  =====\n");
-    printf("===========================================================\n");
-    printf("=====                [1] - Comprar produtos           =====\n");
-    printf("=====                [2] - Verificar Compras          =====\n");
-    printf("=====                [3] - Alterar Compras            =====\n");
-    printf("=====                [4] - Excluir Compras            =====\n");
-    printf("=====                [5] - Relatório                  =====\n");
-    printf("=====                [0] - Sair                       =====\n");
-    scanf("%i", &op);
-    printf("===========================================================\n");
-    return 0;
-}
+
 
 void tela_info_proj(void){
     printf("\n");
