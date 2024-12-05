@@ -42,7 +42,7 @@ int main() {
         if (op >= 0 && op <= 6) {  // Verifica se a opção está no intervalo esperado
             switch (op) {
                 case 1:
-                    tela_mod_cliente();
+                    tela_mod_cliente(saveDate());
                     break;
                 case 2:
                     tela_mod_vendas();
@@ -71,11 +71,3 @@ int main() {
     printf("FIM DO PROGRAMA!\n");
     return 0;
 }
-
-
-
-
-/*
-
-        
-*/

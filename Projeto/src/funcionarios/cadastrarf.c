@@ -28,6 +28,7 @@ void cadastrar_funcionario(void){
             printf("---> Nome inválido!\n");
         }
     }while(!nome_valido);
+    
     printf("Digite o CPF do funcionário: ");
     scanf("%s", cpf);
     getchar();
