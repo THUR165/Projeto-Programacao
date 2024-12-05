@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "cadastrarc.h"
+#include "../../valida.h"
 /*
 1 - Clientes:
 Nome:
@@ -18,30 +19,59 @@ Cliente cad_client(void) {
     Cliente cliente;
 
     // Alocação dinâmica para campos de tamanho variável
-    cliente.nome = malloc(51 * sizeof(char));  // Ajuste conforme o tamanho necessário
-    cliente.rua = malloc(51 * sizeof(char));   // Ajuste conforme o tamanho necessário
+    cliente.nome = malloc(51 * sizeof(char));
+    cliente.rua = malloc(51 * sizeof(char));
+    if (!cliente.nome || !cliente.rua) {
+        printf("Erro ao alocar memória!\n");
+        exit(1);
+    }
 
-    printf("Digite o nome do cliente: \n");
-    scanf(" %[^\n]", cliente.nome);
+    printf("===========================================================\n");
+    printf("=======             Cadastrar Cliente               ======\n");
+    printf("===========================================================\n");
 
-    printf("Digite o CPF do cliente (123.456.789-12): \n");
-    scanf("%s", cliente.cpf);
+    int nome_valido = 0;
+    do {
+        printf("Digite o seu nome: ");
+        fgets(cliente.nome, 51, stdin);
+        cliente.nome[strcspn(cliente.nome, "\n")] = '\0';
+        if (validar_nome(cliente.nome)) {
+            nome_valido = 1;
+        } else {
+            printf("---> Nome inválido!\n");
+        }
+    } while (!nome_valido);
 
-    printf("Data de Nascimento (xx/xx/xxxx): -> \n");
-    scanf("%s", cliente.nasc);
+    printf("Digite o CPF: ");
+    fgets(cliente.cpf, sizeof(cliente.cpf), stdin);
+    cliente.cpf[strcspn(cliente.cpf, "\n")] = '\0';
+    
+    //teste da função de validar cpf; colocar num loop caso cpf digitado não seja válido
+    if (validar_cpf(cliente.cpf)) {
+        printf("CPF válido!\n");
+    } else {
+        printf("CPF inválido!\n");
+    }
 
-    printf("Gênero (M/F): -> \n");
-    scanf("%s", cliente.gen);
+    printf("Data de Nascimento (DD/MM/AAAA): ");
+    fgets(cliente.nasc, sizeof(cliente.nasc), stdin);
+    cliente.nasc[strcspn(cliente.nasc, "\n")] = '\0';
 
-    printf("Digite Telefone ((xx) x xxxx-xxxx): -> \n");
-    scanf("%s", cliente.tel);
+    printf("Gênero (M/F): ");
+    fgets(cliente.gen, sizeof(cliente.gen), stdin);
+    cliente.gen[strcspn(cliente.gen, "\n")] = '\0';
 
-    printf("Digite o nome da Rua: -> \n");
-    scanf(" %[^\n]", cliente.rua);
+    printf("Digite o telefone ((XX) X XXXX-XXXX): ");
+    fgets(cliente.tel, sizeof(cliente.tel), stdin);
+    cliente.tel[strcspn(cliente.tel, "\n")] = '\0';
 
-    printf("Digite o número da casa: -> \n");
-    scanf("%[^\n]", cliente.num);
+    printf("Digite o nome da rua: ");
+    fgets(cliente.rua, 51, stdin);
+    cliente.rua[strcspn(cliente.rua, "\n")] = '\0';
 
+    printf("Digite o número da casa: ");
+    fgets(cliente.num, sizeof(cliente.num), stdin);
+    cliente.num[strcspn(cliente.num, "\n")] = '\0';
 
     printf("\nInformações do Cliente:\n");
     printf("Nome: %s\n", cliente.nome);
@@ -50,11 +80,10 @@ Cliente cad_client(void) {
     printf("Gênero: %s\n", cliente.gen);
     printf("Telefone: %s\n", cliente.tel);
     printf("Rua: %s\n", cliente.rua);
-    printf("Numero da Casa: %s\n", cliente.num);
+    printf("Número da Casa: %s\n", cliente.num);
 
     return cliente;
 }
-
 
 
 /*
