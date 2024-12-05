@@ -6,11 +6,17 @@
 #include "cadastrarf.h"
 #include "../../valida.h"    //inclui biblioteca valida.h para as funções de validação de dados
 
-void cadastrar_funcionario(void){
-    char nome[50];
-    char cpf[20];  //não seria cpf[12]? Já que são 11 dígitos do CPF + 1 para o 0. Ou 15, contando com pontos e traço?
-    char data_nasc[11];  
-    int nome_valido = 0;
+//struct para funcionario
+typedef struct funcionario {
+    char nome[51];
+    char cpf[12];       //12 pq seriam 11 dígitos + 1 para o 0.
+    char data_nasc[11];
+} Funcionario;
+
+void cadastrar_funcionario(void){    //leitura de dados...
+    
+    Funcionario* funcionario;
+    funcionario = (Funcionario*)malloc(sizeof(Funcionario));
 
     printf("===========================================================\n");
     printf("=======             Cadastrar Funcionário            ======\n");
@@ -18,7 +24,7 @@ void cadastrar_funcionario(void){
     getchar();
     do{        //teste do loop para nomes inválidos
         printf("Digite o nome do funcionário: ");
-        fgets(nome, sizeof(nome), stdin);       
+        fgets(&funcionario->nome, sizeof(&funcionario->nome), stdin);       
 
         nome[strcspn(nome, "\n")] = 0;
      
@@ -29,7 +35,7 @@ void cadastrar_funcionario(void){
         }
     }while(!nome_valido);
     printf("Digite o CPF do funcionário: ");
-    scanf("%s", cpf);
+    scanf("%s", &funcionario->cpf);
     getchar();
     //teste da função de validar cpf; colocar num loop caso cpf digitado não seja válido
     if (validar_cpf(cpf)) {
@@ -38,7 +44,7 @@ void cadastrar_funcionario(void){
         printf("CPF inválido!\n");
     }
     printf("Digite a data de nascimento (DD/MM/AAAA): ");
-    scanf("%s", data_nasc);
+    scanf("%s", &funcionario->data_nasc);
     getchar();
     //teste da função de validar data_nascimento
     if (validar_data_nascimento(data_nasc)) {
