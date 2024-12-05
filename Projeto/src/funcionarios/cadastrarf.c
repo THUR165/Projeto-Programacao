@@ -13,6 +13,7 @@ typedef struct funcionario {
     char data_nasc[11];
 } Funcionario;
 
+//separar funções de preencher e cadastrar(gravar)?...
 void cadastrar_funcionario(void){    //leitura de dados...
     
     Funcionario* funcionario;
@@ -56,4 +57,5 @@ void cadastrar_funcionario(void){    //leitura de dados...
     printf("======= Cadastro de funcionário realizado com sucesso! ==== \n");
     printf("=========================================================== \n");
     getchar();
+    free(funcionario); //liberar memória?
 }

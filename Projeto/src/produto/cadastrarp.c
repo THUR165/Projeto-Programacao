@@ -13,6 +13,7 @@ typedef struct produto {
     int status;
 } Produto;
 
+//separar funções de preencher gravar(cadastrar)? Preenche os dados, (ocnfirma os dados?), e então cadastra (grava) no arquivo?...
 void cadastrar_produto(void){          //sendo ainda a leitura, então a função não retornaria Produto* ainda...
     
     Produto* produto;
@@ -43,4 +44,5 @@ void cadastrar_produto(void){          //sendo ainda a leitura, então a funçã
     printf("======= Cadastro de produto realizado com sucesso! ======== \n");
     printf("=========================================================== \n");
     getchar();
+    free(produto); //liberar memória?
 }
