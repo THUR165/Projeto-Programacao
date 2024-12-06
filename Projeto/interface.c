@@ -56,7 +56,7 @@ void tela_mod_cliente(void *clientes, int size) {
         if (op >= 0 && op <= 4) {  // Verifica se a opção está no intervalo permitido
             switch (op) {
                 case 1:
-                    cad_client();
+                    cad_client("cliente.bin");
                     break;
                 case 2: {
                     char cpf_busca[15];
