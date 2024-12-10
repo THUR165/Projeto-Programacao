@@ -81,6 +81,13 @@ void cad_client(const char* nomeArquivo) {
     scanf("%15[^\n]", cliente.tel);
     limparBuffer();
 
+    printf("Digite o nome da Cidade: ");
+    fgets(cliente.cid, sizeof(cliente.cid), stdin);
+    cliente.cid[strcspn(cliente.cid, "\n")] = '\0';
+
+    printf("Digite a sigla do estado: ");
+    fgets(cliente.rua, sizeof(cliente.est), stdin);
+    cliente.est[strcspn(cliente.est, "\n")] = '\0';
     // Capturar rua
     printf("Digite o nome da Rua: ");
     fgets(cliente.rua, sizeof(cliente.rua), stdin);
