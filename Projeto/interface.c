@@ -63,29 +63,22 @@ void tela_mod_cliente(void *clientes, int size) {
                 case 2: {
                     char cpf[15];
                     printf("Digite o CPF do cliente que deseja buscar: ");
-                    while (getchar() != '\n');  // Limpa o buffer antes de capturar o CPF
+                    limparBuffer(); // Use antes de capturar o CPF
                     scanf("%14[^\n]", cpf);
 
-                    // Chamar a função buscarCliente
                     Cliente* clienteEncontrado = buscarCliente("clientes.dat", cpf);
 
-                    // Verificar o retorno
-                    if (clienteEncontrado != NULL) {
-                        printf("\nCliente encontrado:\n");
-                        printf("Nome: %s\n", clienteEncontrado->nome);
-                        printf("CPF: %s\n", clienteEncontrado->cpf);
-                        printf("Data de Nascimento: %s\n", clienteEncontrado->nasc);
-                        printf("Gênero: %s\n", clienteEncontrado->gen);
-                        printf("Telefone: %s\n", clienteEncontrado->tel);
-                        printf("Rua: %s\n", clienteEncontrado->rua);
-                        printf("Número da casa: %s\n", clienteEncontrado->num);
+                    // Exibir informações do cliente usando a função adaptada
+                    exibirCliente(clienteEncontrado);
 
-                        // Liberar memória alocada
+                    // Liberar a memória do cliente encontrado, se necessário
+                    if (clienteEncontrado != NULL) {
                         free(clienteEncontrado);
-                    } else {
-                        printf("\nCliente com CPF '%s' não encontrado.\n", cpf);
                     }
-                                }
+
+                    break;
+                }
+                                
                 case 3:
                     modificar_cliente();
                     break;

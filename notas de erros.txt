@@ -7,3 +7,9 @@ e não executa o codigo.
 Notas de Atualização:
 Filtros de Relatórios
 Clientes: Cidade e estado, generos e
+
+vendas: data da venda , produtos vendidos , clintes ativos e inativos, categorias de vendas
+
+struct vendas: cod_de barras, cpf do cliente, preço do produto, data da venda
+valor a ser pago.
+

@@ -4,35 +4,20 @@
 #include "../clientes/cadastrarc.h"
 
 
-Cliente* buscarCliente(const char* nomeArquivo, const char* cpf) {
-    FILE* fp;
-    Cliente* cliente;
-
-    // Aloca memória para um cliente
-    cliente = (Cliente*)malloc(sizeof(Cliente));
+void exibirCliente(Cliente* cliente) {
     if (cliente == NULL) {
-        perror("Erro ao alocar memória para cliente");
-        return NULL;
+        printf("\n= = = Cliente Inexistente = = =\n");
+    } else {
+        printf("\n= = = Cliente Cadastrado = = =\n");
+        printf("Nome: %s\n", cliente->nome);
+        printf("CPF: %s\n", cliente->cpf);
+        printf("Data de Nascimento: %s\n", cliente->nasc);
+        printf("Gênero: %s\n", cliente->gen);
+        printf("Telefone: %s\n", cliente->tel);
+        printf("Rua: %s\n", cliente->rua);
+        printf("Número da Casa: %s\n", cliente->num);
+        printf("Status: %s\n", cliente->status ? "Ativo" : "Inativo");
     }
-
-    // Abre o arquivo para leitura binária
-    fp = fopen(nomeArquivo, "rb");
-    if (fp == NULL) {
-        perror("Erro ao abrir o arquivo");
-        free(cliente); // Libera memória alocada
-        return NULL;
-    }
-
-    // Procura o cliente no arquivo
-    while (fread(cliente, sizeof(Cliente), 1, fp)) {
-        if ((strcmp(cliente->cpf, cpf) == 0) && (cliente->status == 1)) {
-            fclose(fp);
-            return cliente; // Retorna o cliente encontrado
-        }
-    }
-
-    // Cliente não encontrado
-    fclose(fp);
-    free(cliente); // Libera memória se não encontrado
-    return NULL;
+    printf("\n\nTecle ENTER para continuar!\n\n");
+    getchar();
 }

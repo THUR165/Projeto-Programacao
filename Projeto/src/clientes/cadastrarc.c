@@ -120,3 +120,38 @@ void cad_client(const char* nomeArquivo) {
         printf("Os dados não foram salvos. Voltando ao menu...\n");
     }
 }
+
+
+
+Cliente* buscarCliente(const char* nomeArquivo, const char* cpf) {
+    FILE* fp;
+    Cliente* cliente;
+
+    // Alocar memória para o cliente
+    cliente = (Cliente*) malloc(sizeof(Cliente));
+    if (cliente == NULL) {
+        perror("Erro ao alocar memória");
+        return NULL;
+    }
+
+    // Abrir o arquivo em modo de leitura binária
+    fp = fopen(nomeArquivo, "rb");
+    if (fp == NULL) {
+        perror("Erro ao abrir o arquivo");
+        free(cliente);
+        return NULL;
+    }
+
+    // Percorrer o arquivo procurando pelo cliente
+    while (fread(cliente, sizeof(Cliente), 1, fp)) {
+        if ((strcmp(cliente->cpf, cpf) == 0) && (cliente->status == 1)) { // Verifica CPF e status ativo
+            fclose(fp);
+            return cliente; // Retorna o cliente encontrado
+        }
+    }
+
+    // Fechar o arquivo e liberar a memória se não encontrar o cliente
+    fclose(fp);
+    free(cliente);
+    return NULL;
+}
