@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "interface.h"
 #include "src/clientes/cadastrarc.h"
+//#include "../cliente.bin"
 
 //Criar um mod relatorio: relatorio clientes,vendas,produtos e funcionários.
 
@@ -47,24 +49,43 @@ void tela_mod_cliente(void *clientes, int size) {
         printf("===========================================================\n");
         printf("Escolha uma opção: ");
 
-        if (scanf("%d", &op) != 1) {  // Verifica se a entrada é um número
+        if (scanf("%d", &op) != 1) {
             printf("Entrada inválida! Por favor, insira um número.\n");
-            while (getchar() != '\n');  // Limpa o buffer de entrada
+            while (getchar() != '\n');  // Limpa o buffer
             continue;  // Retorna ao início do loop
         }
 
-        if (op >= 0 && op <= 4) {  // Verifica se a opção está no intervalo permitido
+        if (op >= 0 && op <= 4) {
             switch (op) {
                 case 1:
                     cad_client("cliente.bin");
                     break;
                 case 2: {
-                    char cpf_busca[15];
+                    char cpf[15];
                     printf("Digite o CPF do cliente que deseja buscar: ");
-                    scanf("%s", cpf_busca);
-                    exibir_cliente(clientes, size, cpf_busca);
-                    break;
-                }
+                    while (getchar() != '\n');  // Limpa o buffer antes de capturar o CPF
+                    scanf("%14[^\n]", cpf);
+
+                    // Chamar a função buscarCliente
+                    Cliente* clienteEncontrado = buscarCliente("clientes.dat", cpf);
+
+                    // Verificar o retorno
+                    if (clienteEncontrado != NULL) {
+                        printf("\nCliente encontrado:\n");
+                        printf("Nome: %s\n", clienteEncontrado->nome);
+                        printf("CPF: %s\n", clienteEncontrado->cpf);
+                        printf("Data de Nascimento: %s\n", clienteEncontrado->nasc);
+                        printf("Gênero: %s\n", clienteEncontrado->gen);
+                        printf("Telefone: %s\n", clienteEncontrado->tel);
+                        printf("Rua: %s\n", clienteEncontrado->rua);
+                        printf("Número da casa: %s\n", clienteEncontrado->num);
+
+                        // Liberar memória alocada
+                        free(clienteEncontrado);
+                    } else {
+                        printf("\nCliente com CPF '%s' não encontrado.\n", cpf);
+                    }
+                                }
                 case 3:
                     modificar_cliente();
                     break;
@@ -80,6 +101,7 @@ void tela_mod_cliente(void *clientes, int size) {
         }
     } while (op != 0);
 }
+
 void tela_mod_vendas(void) {
     int op;
     do {

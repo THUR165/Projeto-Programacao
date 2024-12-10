@@ -12,22 +12,46 @@
 // erro não ta gravando o nome do cliente
 
 
+
 // Função para limpar o buffer do teclado
 void limparBuffer(void) {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
-// Função para capturar, validar, exibir e salvar os dados do cliente
-void cad_client(const char *nomeArquivo) {
+
+// Função para validar o nome (simples validação de exemplo)
+
+
+// Função para gravar o cliente no arquivo
+void gravarCliente(const char* nomeArquivo, Cliente* cliente) {
+    FILE* fp = fopen(nomeArquivo, "ab"); // Abre em modo binário para adicionar
+    if (fp == NULL) {
+        perror("Erro ao abrir o arquivo");
+        return;
+    }
+
+    // Escreve os dados no arquivo
+    if (fwrite(cliente, sizeof(Cliente), 1, fp) != 1) {
+        perror("Erro ao gravar os dados");
+    } else {
+        printf("Dados gravados com sucesso no arquivo '%s'.\n", nomeArquivo);
+    }
+
+    fclose(fp); // Fecha o arquivo
+}
+
+// Função para cadastrar cliente
+void cad_client(const char* nomeArquivo) {
     Cliente cliente;
     int valido;
 
     // Capturar e validar nome
     do {
+        limparBuffer();
         printf("Digite o nome do cliente: ");
         fgets(cliente.nome, sizeof(cliente.nome), stdin);
-        cliente.nome[strcspn(cliente.nome, "\n")] = '\0'; // Remover '\n'
+        cliente.nome[strcspn(cliente.nome, "\n")] = '\0'; // Remove '\n'
 
         if (validar_nome(cliente.nome)) {
             valido = 1;
@@ -59,8 +83,8 @@ void cad_client(const char *nomeArquivo) {
 
     // Capturar rua
     printf("Digite o nome da Rua: ");
-    scanf("%50[^\n]", cliente.rua);
-    limparBuffer();
+    fgets(cliente.rua, sizeof(cliente.rua), stdin);
+    cliente.rua[strcspn(cliente.rua, "\n")] = '\0';
 
     // Capturar número da casa
     printf("Digite o número da casa: ");
@@ -84,21 +108,7 @@ void cad_client(const char *nomeArquivo) {
     limparBuffer();
 
     if (resposta == 'S' || resposta == 's') {
-        FILE *arquivo = fopen(nomeArquivo, "ab");
-        if (arquivo == NULL) {
-            perror("Erro ao abrir arquivo");
-            return;
-        }
-
-        // Tente salvar no arquivo
-        size_t resultado = fwrite(&cliente, sizeof(Cliente), 1, arquivo);
-        if (resultado != 1) {
-            perror("Erro ao salvar os dados");
-        } else {
-            printf("Dados salvos com sucesso no arquivo '%s'!\n", nomeArquivo);
-        }
-
-        fclose(arquivo);
+        gravarCliente(nomeArquivo, &cliente); // Chama a função de gravação
     } else {
         printf("Os dados não foram salvos. Voltando ao menu...\n");
     }

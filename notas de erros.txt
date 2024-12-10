@@ -1,0 +1,5 @@
+Erros atuais:
+Não esta abrindo o arquivo na verificação do cliente
+"Erro ao abrir o arquivo: No such file or directory"
+Erro quando cadastro usuarios e tentar executar o programa, dá um Erro
+e não executa o codigo.

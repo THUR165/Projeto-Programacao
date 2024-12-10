@@ -9,11 +9,12 @@ typedef struct {
     char tel[15];    // Memória estática para telefone (15 + 1)
     char rua[51];    
     char num[6];
+    int status;
 } Cliente;
 
 void cad_client(const char *nomeArquivo);
 //void imprimir_client(Cliente Cliente);
 //void liberar_client(Cliente Cliente);
-Cliente exibir_cliente(Cliente *clientes,int size, const char *cpf_busca);
+void exibirClientePorCPF(const char *nomeArquivo, const char *cpfBuscado);
 
 #endif
