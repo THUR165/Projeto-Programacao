@@ -6,10 +6,8 @@
 #include "Projeto/valida.h"
 
 //assinatura para o modulo cliente
-#include "Projeto/src/clientes/alterarc.h"
-#include "Projeto/src/clientes/cadastrarc.h"
-#include "Projeto/src/clientes/excluirc.h"
-#include "Projeto/src/clientes/verificarc.h"
+#include "Projeto/src/clientes/cliente.h"
+
 //assinatura para o modulo funcionario
 #include "Projeto/src/funcionarios/alterarf.h"
 #include "Projeto/src/funcionarios/cadastrarf.h"

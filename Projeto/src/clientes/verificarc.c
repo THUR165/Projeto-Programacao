@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "../clientes/cadastrarc.h"
+#include "../clientes/cliente.h"
 
 
 // possivel erro nessa função na hr de abrir o arquivo

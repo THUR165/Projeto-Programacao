@@ -1,10 +1,13 @@
 Erros atuais:
-Não esta abrindo o arquivo na verificação do cliente
-"Erro ao abrir o arquivo: No such file or directory"
-Erro quando cadastro usuarios e tentar executar o programa, dá um Erro
-e não executa o codigo.
+erros de exibição em alguns momentos
 
 Notas de Atualização:
+ att os .h , para não ficar muitos arquivos podemos colocar as 
+ declarações em apenas um arquivo .h, um cliente.h para todas as
+ declarações do modulo cliente.
+ Fica melhor o manuseio do codigo...
+
+
 Filtros de Relatórios
 Clientes: Cidade e estado, generos ...
 

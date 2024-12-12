@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "excluirc.h"
+
 
 void excluir_cliente(void){
     char cpf[20];

@@ -15,11 +15,14 @@ typedef struct {
 } Cliente;
 
 void cad_client(const char *nomeArquivo);
-//void imprimir_client(Cliente Cliente);
-//void liberar_client(Cliente Cliente);
 void limparBuffer(void);
+
 Cliente* exibirCliente(Cliente* cliente);
 char* pesqClient(char* cpf);
 Cliente* buscarCliente(const char* cpf);
+
+void modificar_cliente(void);
+
+void excluir_cliente(void);
 
 #endif
