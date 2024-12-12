@@ -11,14 +11,15 @@ typedef struct {
     char est[4];     // sigla do estado
     char rua[51];    
     char num[6];
-    int status;
+    //int status;
 } Cliente;
 
 void cad_client(const char *nomeArquivo);
 //void imprimir_client(Cliente Cliente);
 //void liberar_client(Cliente Cliente);
 void limparBuffer(void);
-void exibirCliente(Cliente* cliente);
-Cliente* buscarCliente(const char* nomeArquivo, const char* cpf);
+Cliente* exibirCliente(Cliente* cliente);
+char* pesqClient(char* cpf);
+Cliente* buscarCliente(const char* cpf);
 
 #endif

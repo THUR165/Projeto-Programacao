@@ -5,14 +5,6 @@
 #include "../../valida.h"
 
 
-// erros a serem corrigidos:
-//Se eu sair do mod cliente e voltar não dá opção de escolha
-// salva os dados uma vez sim e outra não, talvez seja na chamada 
-// da função no main
-// erro não ta gravando o nome do cliente
-
-
-
 // Função para limpar o buffer do teclado
 void limparBuffer(void) {
     int c;
@@ -122,36 +114,3 @@ void cad_client(const char* nomeArquivo) {
 }
 
 
-
-Cliente* buscarCliente(const char* nomeArquivo, const char* cpf) {
-    FILE* fp;
-    Cliente* cliente;
-
-    // Alocar memória para o cliente
-    cliente = (Cliente*) malloc(sizeof(Cliente));
-    if (cliente == NULL) {
-        perror("Erro ao alocar memória");
-        return NULL;
-    }
-
-    // Abrir o arquivo em modo de leitura binária
-    fp = fopen(nomeArquivo, "rb");
-    if (fp == NULL) {
-        perror("Erro ao abrir o arquivo");
-        free(cliente);
-        return NULL;
-    }
-
-    // Percorrer o arquivo procurando pelo cliente
-    while (fread(cliente, sizeof(Cliente), 1, fp)) {
-        if ((strcmp(cliente->cpf, cpf) == 0) && (cliente->status == 1)) { // Verifica CPF e status ativo
-            fclose(fp);
-            return cliente; // Retorna o cliente encontrado
-        }
-    }
-
-    // Fechar o arquivo e liberar a memória se não encontrar o cliente
-    fclose(fp);
-    free(cliente);
-    return NULL;
-}
