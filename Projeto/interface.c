@@ -77,7 +77,7 @@ void tela_mod_cliente(void *clientes, int size) {
                     modificar_cliente("cliente.bin");
                     break;
                 case 4:
-                    excluir_cliente();
+                    excluir_cliente("cliente.bin");
                     break;
                 case 0:
                     printf("Voltando ao Menu Principal...\n");

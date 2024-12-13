@@ -24,6 +24,6 @@ Cliente* buscarCliente(const char* cpf);
 
 void modificar_cliente(const char* nomeArquivo);
 
-void excluir_cliente(void);
+void excluir_cliente(const char* nomeArquivo);
 
 #endif
