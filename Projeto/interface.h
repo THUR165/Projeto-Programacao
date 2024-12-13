@@ -11,7 +11,7 @@ void tela_mod_vendas();
 void tela_info_proj();
 void tela_mod_relat();
 
-void modificar_cliente(void);
+void modificar_cliente(const char* nomeArquivo);
 void excluir_cliente(void);
 
 

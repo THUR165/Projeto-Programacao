@@ -1,3 +1,4 @@
+#include <stdbool.h>
 #ifndef CADASTRARC_H
 #define CADASTRARC_H
 
@@ -11,7 +12,7 @@ typedef struct {
     char est[4];     // sigla do estado
     char rua[51];    
     char num[6];
-    //int status;
+    int status;
 } Cliente;
 
 void cad_client(const char *nomeArquivo);
@@ -21,7 +22,7 @@ Cliente* exibirCliente(Cliente* cliente);
 char* pesqClient(char* cpf);
 Cliente* buscarCliente(const char* cpf);
 
-void modificar_cliente(void);
+void modificar_cliente(const char* nomeArquivo);
 
 void excluir_cliente(void);
 

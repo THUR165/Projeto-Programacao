@@ -34,13 +34,14 @@ Cliente* buscarCliente(const char* cpf) {
     }
 
     while (fread(cliente, sizeof(Cliente), 1, fp)) {
-        //printf("Lido do arquivo: CPF=%s", cliente->cpf); //, cliente->status);
+    printf("Lido do arquivo: CPF=%s, Status=%d\n", cliente->cpf, cliente->status);
 
-        if ((strcmp(cliente->cpf, cpf) == 0)) {//&& (cliente->status == 1)) { // Status ativo
-            fclose(fp);
-            return cliente; // Retorna o cliente encontrado
-        }
+    if ((strcmp(cliente->cpf, cpf) == 0) && (cliente->status == 1)) {
+        fclose(fp);
+        return cliente;
     }
+}
+
 
     fclose(fp);
     free(cliente);
@@ -67,7 +68,7 @@ Cliente* exibirCliente(Cliente* cliente) {
         printf("Estado: %s\n", cliente->est);
         printf("Rua: %s\n", cliente->rua);
         printf("Número da Casa: %s\n", cliente->num);
-        //printf("Status: %d\n", cliente->status);
+        printf("Status: %d\n", cliente->status);
     }
     printf("\n\nTecle ENTER para continuar!\n\n");
     getchar();

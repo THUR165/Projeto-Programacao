@@ -72,12 +72,9 @@ void tela_mod_cliente(void *clientes, int size) {
                         free(clienteEncontrado); // Liberar memória do cliente encontrado
                     }
                     break;
-}
-
-
-                                
+}                              
                 case 3:
-                    modificar_cliente();
+                    modificar_cliente("cliente.bin");
                     break;
                 case 4:
                     excluir_cliente();

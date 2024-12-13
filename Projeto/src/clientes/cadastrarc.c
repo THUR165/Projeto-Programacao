@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 #include "cliente.h"
 #include "../../valida.h"
 
@@ -73,13 +74,16 @@ void cad_client(const char* nomeArquivo) {
     scanf("%15[^\n]", cliente.tel);
     limparBuffer();
 
+    // Capturar cidade
     printf("Digite o nome da Cidade: ");
     fgets(cliente.cid, sizeof(cliente.cid), stdin);
     cliente.cid[strcspn(cliente.cid, "\n")] = '\0';
 
+    // Capturar estado
     printf("Digite a sigla do estado: ");
-    fgets(cliente.rua, sizeof(cliente.est), stdin);
+    fgets(cliente.est, sizeof(cliente.est), stdin);
     cliente.est[strcspn(cliente.est, "\n")] = '\0';
+
     // Capturar rua
     printf("Digite o nome da Rua: ");
     fgets(cliente.rua, sizeof(cliente.rua), stdin);
@@ -97,6 +101,8 @@ void cad_client(const char* nomeArquivo) {
     printf("Data de Nascimento: %s\n", cliente.nasc);
     printf("Gênero: %s\n", cliente.gen);
     printf("Telefone: %s\n", cliente.tel);
+    printf("Cidade: %s\n", cliente.cid);
+    printf("Estado: %s\n", cliente.est);
     printf("Rua: %s\n", cliente.rua);
     printf("Número da Casa: %s\n", cliente.num);
 
@@ -107,10 +113,13 @@ void cad_client(const char* nomeArquivo) {
     limparBuffer();
 
     if (resposta == 'S' || resposta == 's') {
+        cliente.status = true; // Define o status como ativo
         gravarCliente(nomeArquivo, &cliente); // Chama a função de gravação
+        printf("Dados salvos com sucesso!\n");
     } else {
         printf("Os dados não foram salvos. Voltando ao menu...\n");
     }
 }
+
 
 

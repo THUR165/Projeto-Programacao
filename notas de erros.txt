@@ -2,11 +2,9 @@ Erros atuais:
 erros de exibição em alguns momentos
 
 Notas de Atualização:
- att os .h , para não ficar muitos arquivos podemos colocar as 
- declarações em apenas um arquivo .h, um cliente.h para todas as
- declarações do modulo cliente.
- Fica melhor o manuseio do codigo...
 
+As validações não estao funcionando ainda, pois testes estam sendo necessário
+adicionar as validações nos cadastratemento...
 
 Filtros de Relatórios
 Clientes: Cidade e estado, generos ...
