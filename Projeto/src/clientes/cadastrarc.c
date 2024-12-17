@@ -1,94 +1,125 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "cadastrarc.h"
+#include <stdbool.h>
+#include "cliente.h"
 #include "../../valida.h"
-/*
-1 - Clientes:
-Nome:
-CPF:
-Data de Nascimento:
-Gênero:
-Telefone:
-Rua:
-*/
-// substituir scanf por fgets, para manuseio de strings
-//exemplo de uso no código de Flavius, no slide.
-//Trocar o \n por \0.
-Cliente cad_client(void) {
-    Cliente cliente;
 
-    // Alocação dinâmica para campos de tamanho variável
-    cliente.nome = malloc(51 * sizeof(char));
-    cliente.rua = malloc(51 * sizeof(char));
-    if (!cliente.nome || !cliente.rua) {
-        printf("Erro ao alocar memória!\n");
-        exit(1);
+
+// Função para limpar o buffer do teclado
+void limparBuffer(void) {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
+
+
+// Função para validar o nome (simples validação de exemplo)
+
+
+// Função para gravar o cliente no arquivo
+void gravarCliente(const char* nomeArquivo, Cliente* cliente) {
+    FILE* fp = fopen(nomeArquivo, "ab"); // Abre em modo binário para adicionar
+    if (fp == NULL) {
+        perror("Erro ao abrir o arquivo");
+        return;
     }
 
-    printf("===========================================================\n");
-    printf("=======             Cadastrar Cliente               ======\n");
-    printf("===========================================================\n");
-
-    int nome_valido = 0;
-    do {
-        printf("Digite o seu nome: ");
-        fgets(cliente.nome, 51, stdin);
-        cliente.nome[strcspn(cliente.nome, "\n")] = '\0';
-        if (validar_nome(cliente.nome)) {
-            nome_valido = 1;
-        } else {
-            printf("---> Nome inválido!\n");
-        }
-    } while (!nome_valido);
-
-    printf("Digite o CPF: ");
-    fgets(cliente.cpf, sizeof(cliente.cpf), stdin);
-    cliente.cpf[strcspn(cliente.cpf, "\n")] = '\0';
-    
-    //teste da função de validar cpf; colocar num loop caso cpf digitado não seja válido
-    if (validar_cpf(cliente.cpf)) {
-        printf("CPF válido!\n");
+    // Escreve os dados no arquivo
+    if (fwrite(cliente, sizeof(Cliente), 1, fp) != 1) {
+        perror("Erro ao gravar os dados");
     } else {
-        printf("CPF inválido!\n");
+        printf("Dados gravados com sucesso no arquivo '%s'.\n", nomeArquivo);
     }
 
-    printf("Data de Nascimento (DD/MM/AAAA): ");
-    fgets(cliente.nasc, sizeof(cliente.nasc), stdin);
-    cliente.nasc[strcspn(cliente.nasc, "\n")] = '\0';
+    fclose(fp); // Fecha o arquivo
+}
 
+// Função para cadastrar cliente
+void cad_client(const char* nomeArquivo) {
+    Cliente cliente;
+    int valido;
+
+    // Capturar e validar nome
+    do {
+        limparBuffer();
+        printf("Digite o nome do cliente: ");
+        fgets(cliente.nome, sizeof(cliente.nome), stdin);
+        cliente.nome[strcspn(cliente.nome, "\n")] = '\0'; // Remove '\n'
+
+        if (validar_nome(cliente.nome)) {
+            valido = 1;
+        } else {
+            printf("---> Nome inválido! Tente novamente.\n");
+            valido = 0;
+        }
+    } while (!valido);
+
+    // Capturar CPF
+    printf("Digite o CPF do cliente (123.456.789-12): ");
+    scanf("%14[^\n]", cliente.cpf);
+    limparBuffer();
+
+    // Capturar data de nascimento
+    printf("Data de Nascimento (xx/xx/xxxx): ");
+    scanf("%10[^\n]", cliente.nasc);
+    limparBuffer();
+
+    // Capturar gênero
     printf("Gênero (M/F): ");
-    fgets(cliente.gen, sizeof(cliente.gen), stdin);
-    cliente.gen[strcspn(cliente.gen, "\n")] = '\0';
+    scanf("%3[^\n]", cliente.gen);
+    limparBuffer();
 
-    printf("Digite o telefone ((XX) X XXXX-XXXX): ");
-    fgets(cliente.tel, sizeof(cliente.tel), stdin);
-    cliente.tel[strcspn(cliente.tel, "\n")] = '\0';
+    // Capturar telefone
+    printf("Digite Telefone ((xx) x xxxx-xxxx): ");
+    scanf("%15[^\n]", cliente.tel);
+    limparBuffer();
 
-    printf("Digite o nome da rua: ");
-    fgets(cliente.rua, 51, stdin);
+    // Capturar cidade
+    printf("Digite o nome da Cidade: ");
+    fgets(cliente.cid, sizeof(cliente.cid), stdin);
+    cliente.cid[strcspn(cliente.cid, "\n")] = '\0';
+
+    // Capturar estado
+    printf("Digite a sigla do estado: ");
+    fgets(cliente.est, sizeof(cliente.est), stdin);
+    cliente.est[strcspn(cliente.est, "\n")] = '\0';
+
+    // Capturar rua
+    printf("Digite o nome da Rua: ");
+    fgets(cliente.rua, sizeof(cliente.rua), stdin);
     cliente.rua[strcspn(cliente.rua, "\n")] = '\0';
 
+    // Capturar número da casa
     printf("Digite o número da casa: ");
-    fgets(cliente.num, sizeof(cliente.num), stdin);
-    cliente.num[strcspn(cliente.num, "\n")] = '\0';
+    scanf("%6[^\n]", cliente.num);
+    limparBuffer();
 
+    // Exibir dados capturados
     printf("\nInformações do Cliente:\n");
     printf("Nome: %s\n", cliente.nome);
     printf("CPF: %s\n", cliente.cpf);
     printf("Data de Nascimento: %s\n", cliente.nasc);
     printf("Gênero: %s\n", cliente.gen);
     printf("Telefone: %s\n", cliente.tel);
+    printf("Cidade: %s\n", cliente.cid);
+    printf("Estado: %s\n", cliente.est);
     printf("Rua: %s\n", cliente.rua);
     printf("Número da Casa: %s\n", cliente.num);
 
-    return cliente;
+    // Perguntar se o usuário deseja salvar os dados
+    printf("\nVocê deseja salvar suas informações? (S/N): ");
+    char resposta;
+    scanf(" %c", &resposta);
+    limparBuffer();
+
+    if (resposta == 'S' || resposta == 's') {
+        cliente.status = true; // Define o status como ativo
+        gravarCliente(nomeArquivo, &cliente); // Chama a função de gravação
+        printf("Dados salvos com sucesso!\n");
+    } else {
+        printf("Os dados não foram salvos. Voltando ao menu...\n");
+    }
 }
 
 
-/*
-void liberar_client(Cliente cliente) {
-    free(cliente.nome);
-    free(cliente.rua);
-}
-*/
+

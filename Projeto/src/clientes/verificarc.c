@@ -1,30 +1,76 @@
 #include <stdio.h>
 #include <string.h>
-#include "../clientes/cadastrarc.h"
+#include <stdlib.h>
+#include "../clientes/cliente.h"
 
-// Função para buscar e exibir informações do cliente pelo CPF
-Cliente exibir_cliente(Cliente *clientes, int size, const char *cpf_busca) {
-    for (int i = 0; i < size; i++) {
-        if (strcmp(clientes[i].cpf, cpf_busca) == 0) {  // CPF encontrado
-            printf("\nCliente encontrado:\n");
-            printf("Nome: %s\n", clientes[i].nome);
-            printf("CPF: %s\n", clientes[i].cpf);
-            printf("Data de Nascimento: %s\n", clientes[i].nasc);
-            printf("Gênero: %s\n", clientes[i].gen);
-            printf("Telefone: %s\n", clientes[i].tel);
-            printf("Rua: %s\n", clientes[i].rua);
-            printf("Número da casa: %s\n", clientes[i].num);
-            
-            // Liberando memória alocada dinamicamente
-            
-            return clientes[i];  // Retorna o cliente encontrado
-        }
+
+// possivel erro nessa função na hr de abrir o arquivo
+
+char* pesqClient(char* cpf) {
+    printf("Digite o CPF do cliente que deseja buscar: ");
+    limparBuffer(); // Certifique-se de limpar o buffer antes da leitura
+    scanf("%14[^\n]", cpf);
+    return cpf;
+}
+
+
+
+
+Cliente* buscarCliente(const char* cpf) {
+    FILE* fp;
+    Cliente* cliente;
+
+    cliente = (Cliente*) malloc(sizeof(Cliente));
+    if (cliente == NULL) {
+        perror("Erro ao alocar memória");
+        return NULL;
     }
 
-    // Caso o CPF não seja encontrado
-    printf("\nCliente com CPF %s não encontrado.\n", cpf_busca);
+    fp = fopen("cliente.bin", "rb");
+    if (fp == NULL) {
+        perror("Erro ao abrir o arquivo");
+        free(cliente);
+        return NULL;
+    }
 
-    // Retornar um cliente vazio em caso de não encontrado
-    Cliente cliente_vazio = {0};  // Inicializa todos os campos com valores padrão
-    return cliente_vazio;
+    while (fread(cliente, sizeof(Cliente), 1, fp)) {
+    printf("Lido do arquivo: CPF=%s, Status=%d\n", cliente->cpf, cliente->status);
+
+    if ((strcmp(cliente->cpf, cpf) == 0) && (cliente->status == 1)) {
+        fclose(fp);
+        return cliente;
+    }
 }
+
+
+    fclose(fp);
+    free(cliente);
+    return NULL; // Cliente não encontrado
+}
+
+
+
+/// @brief 
+/// @param cliente 
+/// @return 
+Cliente* exibirCliente(Cliente* cliente) {
+    if (cliente == NULL) {
+        printf("\n= = = Cliente Inexistente = = =\n");
+        //printf("Lido do arquivo: CPF=%s", cliente->cpf);
+    } else {
+        printf("\n= = = Cliente Cadastrado = = =\n");
+        printf("Nome: %s\n", cliente->nome);
+        printf("CPF: %s\n", cliente->cpf);
+        printf("Data de Nascimento: %s\n", cliente->nasc);
+        printf("Gênero: %s\n", cliente->gen);
+        printf("Telefone: %s\n", cliente->tel);
+        printf("Cidade: %s\n", cliente->cid);
+        printf("Estado: %s\n", cliente->est);
+        printf("Rua: %s\n", cliente->rua);
+        printf("Número da Casa: %s\n", cliente->num);
+        printf("Status: %d\n", cliente->status);
+    }
+    printf("\n\nTecle ENTER para continuar!\n\n");
+    getchar();
+}
+

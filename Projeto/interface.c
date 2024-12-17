@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "interface.h"
-#include "src/clientes/cadastrarc.h"
+#include "src/clientes/cliente.h"
+//#include "../cliente.bin"
 
 //Criar um mod relatorio: relatorio clientes,vendas,produtos e funcionários.
 
@@ -47,29 +49,35 @@ void tela_mod_cliente(void *clientes, int size) {
         printf("===========================================================\n");
         printf("Escolha uma opção: ");
 
-        if (scanf("%d", &op) != 1) {  // Verifica se a entrada é um número
+        if (scanf("%d", &op) != 1) {
             printf("Entrada inválida! Por favor, insira um número.\n");
-            while (getchar() != '\n');  // Limpa o buffer de entrada
+            while (getchar() != '\n');  // Limpa o buffer
             continue;  // Retorna ao início do loop
         }
 
-        if (op >= 0 && op <= 4) {  // Verifica se a opção está no intervalo permitido
+        if (op >= 0 && op <= 4) {
             switch (op) {
                 case 1:
-                    cad_client();
+                    cad_client("cliente.bin");
                     break;
                 case 2: {
-                    char cpf_busca[15];
-                    printf("Digite o CPF do cliente que deseja buscar: ");
-                    scanf("%s", cpf_busca);
-                    exibir_cliente(clientes, size, cpf_busca);
+                    char cpf[15];
+                    pesqClient(cpf); // Capturar o CPF do cliente
+
+                    Cliente* clienteEncontrado = buscarCliente(cpf); // Buscar cliente no arquivo
+
+                    exibirCliente(clienteEncontrado); // Exibir informações do cliente
+
+                    if (clienteEncontrado != NULL) {
+                        free(clienteEncontrado); // Liberar memória do cliente encontrado
+                    }
                     break;
-                }
+}                              
                 case 3:
-                    modificar_cliente();
+                    modificar_cliente("cliente.bin");
                     break;
                 case 4:
-                    excluir_cliente();
+                    excluir_cliente("cliente.bin");
                     break;
                 case 0:
                     printf("Voltando ao Menu Principal...\n");
@@ -80,6 +88,7 @@ void tela_mod_cliente(void *clientes, int size) {
         }
     } while (op != 0);
 }
+
 void tela_mod_vendas(void) {
     int op;
     do {
