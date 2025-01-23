@@ -133,4 +133,102 @@ int validar_data_nascimento(char data_nascimento[11]) {
     return 0; // Pessoa não tem 18 anos
 }
 
+//Função para validar código (de produto) - baseada na função de validar_cpf
+int validar_codigo(char* codigo) {
+    size_t len = strlen(codigo);
+    int min = 1, max = 5;
+
+    if (len < min || len > max) {
+        return 0; //Falha...
+    }
+
+    for(int i=0; i<len; i++) {
+        if(!isdigit(codigo[i])) {
+            return 0; //Falha
+        }
+    }
+
+    return 1; //success
+}
+
+//Função para validar preço de um produto
+int validar_preco(float preco) {
+    int min_preco = 0.25, max_preco = 4000.0; //não há nada com valor menor do que 25 centavos nem com valor maior que 4000
+
+    if (preco < min_preco || preco > max_preco) {
+        return 0; //Falha...
+    }
+
+    return 1; //success
+}
+
+//Função para validar marca
+int validar_marca(char* marca) {
+    size_t len = strlen(marca);
+    int min = 2, max = 20;
+
+    if(len < min || len > max) {
+        return 0; //Falha...
+    }
+
+    for (size_t i = 0; i < len; i++) {
+        if (!caractere_valido(marca[i]) && marca[i] != ' ') {
+            return 0; // Inválido se não for uma letra ou espaço
+            }
+    }
+
+    return 1; //success
+}
+
+//Função para validar categoria
+int validar_categoria(char* categoria) {
+    size_t len = strlen(categoria);
+    int min = 2, max = 20;
+
+    if(len < min || len > max) {
+        return 0; //Falha...
+    }
+
+    for (size_t i = 0; i < len; i++) {
+        if (!caractere_valido(categoria[i]) && categoria[i] != ' ') {
+            return 0; // Inválido se não for uma letra ou espaço
+            }
+    }
+
+    return 1; //success
+}
+
+//Função para validar data de validade, baseada na função de validar data de nascimento
+int validar_data_validade(char data_validade[11]) {
+    int dia, mes, ano;
+
+    // Verifica se a string tem o formato correto (10 caracteres: dd/mm/aaaa)
+    if (strlen(data_validade) != 10 || data_validade[2] != '/' || data_validade[5] != '/') {
+        return 0; // Formato inválido
+    }
+
+    // Extrai dia, mês e ano da string
+    dia = atoi(&data_validade[0]); // Pega os dois primeiros caracteres e converte para int
+    mes = atoi(&data_validade[3]); // Pega os caracteres na posição 3 e 4
+    ano = atoi(&data_validade[6]); // Pega os caracteres a partir da posição 6
+
+    // Verifica se a data está em um formato válido
+    if (dia < 1 || dia > 31 || mes < 1 || mes > 12 || ano < 2024) {
+        return 0; // Data inválida
+    }
+
+    // Verifica os dias máximos de cada mês
+    if ((mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia > 30) {
+        return 0; // Meses com 30 dias
+    }
+    if (mes == 2) {
+        // Verifica se é ano bissexto
+        int bissexto = (ano % 4 == 0 && (ano % 100 != 0 || ano % 400 == 0));
+        if ((bissexto && dia > 29) || (!bissexto && dia > 28)) {
+            return 0; // Fevereiro com dias inválidos
+        }
+    }
+
+    return 1; //sucess
+}
 #endif
