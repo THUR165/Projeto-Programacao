@@ -1,7 +1,7 @@
+#ifndef ALTERAR_C
+#define ALTERAR_C
 
-#ifndef ALTERAR_H
-#define ALTERAR_H
+#include "cadastrarc.h"
 
-
-void modificar_cliente(void);
+int alterarCliente(const char* nomeArquivo);
 #endif

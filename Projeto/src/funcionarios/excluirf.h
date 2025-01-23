@@ -1,6 +1,8 @@
-#ifndef ALTERAR_F
-#define ALTERAR_F
+#ifndef EXCLUIR_F
+#define EXCLUIR_F
 
+#include "cadastrarf.h"
+#include "verificarf.h"
 
-void excluir_funcionario(void);
+int excluirFuncionario(const char* nomeArquivo);
 #endif

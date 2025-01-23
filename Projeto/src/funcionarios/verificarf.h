@@ -1,6 +1,8 @@
-#ifndef ALTERAR_F
-#define ALTERAR_F
+#ifndef VERIFICAR_F
+#define VERIFICAR_F
 
+#include "cadastrarf.h"
 
-void exibir_funcionario(void);
+Funcionario* buscarFuncionario(const char* nomeArquivo);
+void exibirFuncionario(Funcionario* func);
 #endif

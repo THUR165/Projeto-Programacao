@@ -1,6 +1,6 @@
-#ifndef ALTERAR_R
-#define ALTERAR_R
+#ifndef RELATORIO_P
+#define RELATORIO_P
+#include "../produto/cadastrarp.h"
 
-
-void relatorio_produtos(void);
+void relatorio_geral_produtos(const char* arquivoProduto);
 #endif

@@ -1,6 +1,7 @@
-#ifndef ALTERAR_H
-#define ALTERAR_H
+#ifndef EXCLUIR_C
+#define EXCLUIR_C
+#include "cadastrarc.h"
+#include "verificarc.h"
 
-
-void excluir_cliente(void);
+int excluirCliente(const char* nomeArquivo);
 #endif

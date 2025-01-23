@@ -1,6 +1,6 @@
-#ifndef ALTERAR_R
-#define ALTERAR_R
+#ifndef RELATORIO_C
+#define RELATORIO_C
+#include "../clientes/cadastrarc.h"
 
-
-void relatorio_cliente(void);
+void relatorio_geral_clientes(const char* arquivoCliente);
 #endif

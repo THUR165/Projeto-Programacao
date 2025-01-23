@@ -1,6 +1,8 @@
 #ifndef ALTERAR_P
 #define ALTERAR_P
+//bibliotecas a serem adicionadas??
 
+#include "cadastrarp.h"
 
-void modificar_produto(void);
+int alterarProduto(const char* nomeArquivo);
 #endif

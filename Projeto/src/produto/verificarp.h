@@ -1,6 +1,8 @@
-#ifndef ALTERAR_P
-#define ALTERAR_P
+#ifndef VERIFICAR_P
+#define VERIFICAR_P
+#include "cadastrarp.h"
 
+Produto* buscarProduto(const char* nomeArquivo);
+void exibirProduto(Produto* prod);
 
-void exibir_produto(void);
 #endif

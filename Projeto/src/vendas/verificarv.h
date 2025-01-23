@@ -1,7 +1,8 @@
 
-#ifndef ALTERAR_V
-#define ALTERAR_V
+#ifndef VERIFICAR_V
+#define VERIFICAR_V
+#include "cadastrarv.h"
 
-
-void exibir_venda(void);
+Venda* buscarVenda(const char* arquivoVenda);
+void exibirVenda(Venda* vnd);
 #endif

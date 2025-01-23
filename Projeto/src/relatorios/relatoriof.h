@@ -1,6 +1,7 @@
-#ifndef ALTERAR_R
-#define ALTERAR_R
+#ifndef RELATORIO_F
+#define RELATORIO_F
+#include "../funcionarios/cadastrarf.h"
 
 
-void relatorio_funcionarios(void);
+void relatorio_geral_funcionarios(const char* arquivoFuncionario);
 #endif

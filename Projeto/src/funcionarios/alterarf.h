@@ -1,6 +1,7 @@
 #ifndef ALTERAR_F
 #define ALTERAR_F
 
+#include "cadastrarf.h"
 
-void modificar_funcionario(void);
+int alterarFuncionario(const char* nomeArquivo);
 #endif

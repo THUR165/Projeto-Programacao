@@ -1,6 +1,6 @@
-#ifndef ALTERAR_R
-#define ALTERAR_R
+#ifndef RELATORIO_V
+#define RELATORIO_V 
+#include "../vendas/cadastrarv.h"
 
-
-void relatorio_vendas(void);
+void relatorio_geral_vendas(const char* arquivoVenda);
 #endif

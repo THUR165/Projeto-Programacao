@@ -4,58 +4,82 @@
 #include <string.h>
 #include <time.h>
 #include "cadastrarf.h"
-#include "../../valida.h"    //inclui biblioteca valida.h para as funções de validação de dados
+ 
 
-//struct para funcionario
-typedef struct funcionario {
-    char nome[51];
-    char cpf[12];       //12 pq seriam 11 dígitos + 1 para o 0.
-    char data_nasc[11];
-} Funcionario;
-
-//separar funções de preencher e cadastrar(gravar)?...
-void cadastrar_funcionario(void){    //leitura de dados...
+Funcionario* preencherFuncionario(void){          
     
-    Funcionario* funcionario;
-    funcionario = (Funcionario*)malloc(sizeof(Funcionario));
-
+    Funcionario* func;
+    func = (Funcionario*)malloc(sizeof(Funcionario));
+    if (func == NULL) {
+        printf("Erro de alocação de memória! \n");
+        return NULL; // return NULL;
+    }
+    int valido = 0;
+    
     printf("===========================================================\n");
     printf("=======             Cadastrar Funcionário            ======\n");
     printf("===========================================================\n");
-    getchar();
-    do{        //teste do loop para nomes inválidos
-        printf("Digite o nome do funcionário: ");
-        fgets(&funcionario->nome, sizeof(&funcionario->nome), stdin);       
+    do{  //Capturar cpf
+        printf("Digite o CPF do funcionário: ");
+        scanf("%11s", func->cpf); 
+        getchar();
 
-        nome[strcspn(nome, "\n")] = 0;
-     
-        if (validar_nome(nome)) {
-            nome_valido = 1;
-        }else{
-            printf("---> Nome inválido!\n");
+        if (validar_cpf(func->cpf)) {
+            valido = 1; 
+        } else {
+             printf("=== CPF inválido!\n");
         }
-    }while(!nome_valido);
-    printf("Digite o CPF do funcionário: ");
-    scanf("%s", &funcionario->cpf);
-    getchar();
-    //teste da função de validar cpf; colocar num loop caso cpf digitado não seja válido
-    if (validar_cpf(cpf)) {
-        printf("CPF válido!\n");
-    } else {
-        printf("CPF inválido!\n");
+    } while(!valido);
+    //Capturar nome
+    do{     
+        valido = 0;
+        printf("Digite o nome do funcionário: ");
+        fgets(func->nome, sizeof(func->nome), stdin);       
+
+        func->nome[strcspn(func->nome, "\n")] = 0;
+     
+        if (validar_nome(func->nome)) {
+            valido = 1;  
+        }else{
+            printf("=== Nome de funcionário inválido!\n");
+        }
+    }while(!valido);
+    //Capturar data de nascimento
+    do{
+        valido = 0;
+        printf("Digite a data de nascimento do funcionário: ");
+        fgets(func->data_nascimento, sizeof(func->data_nascimento), stdin);       
+
+        func->data_nascimento[strcspn(func->data_nascimento, "\n")] = 0;
+
+        if (validar_data_nascimento(func->data_nascimento)) {
+            valido = 1;  
+        }else{
+            printf("=== Data de nascimento inválida!\n");
+        }
+    } while(!valido);
+    //Status = 1
+    func->status = 1;
+
+    return func;
+}
+
+int gravarFuncionario(const char* nomeArquivo, Funcionario* func) {
+    FILE* fp = fopen(nomeArquivo, "ab");  //ab
+    if (fp == NULL) {
+        printf("Erro ao abrir o arquivo para cadastrar o funcionário!\n");
+        free(func);
+        return 0; //falha...
     }
-    printf("Digite a data de nascimento (DD/MM/AAAA): ");
-    scanf("%s", &funcionario->data_nasc);
-    getchar();
-    //teste da função de validar data_nascimento
-    if (validar_data_nascimento(data_nasc)) {
-        printf("Data de nascimento válida e a pessoa tem mais de 18 anos.\n");
-    } else {
-        printf("Data de nascimento inválida ou a pessoa não tem mais de 18 anos.\n");
+
+    //Escreve os dados no arquivo e testa se deu certo
+    if (fwrite(func, sizeof(Funcionario), 1, fp) != 1) {
+        perror("Erro ao gravar os dados\n");
+        free(func);
+        return 0; //falha...
     }
-    printf("\n");
-    printf("======= Cadastro de funcionário realizado com sucesso! ==== \n");
-    printf("=========================================================== \n");
-    getchar();
-    free(funcionario); //liberar memória?
+
+    fclose(fp); // Fecha o arquivo
+    free(func);
+    return 1; //sucess
 }
