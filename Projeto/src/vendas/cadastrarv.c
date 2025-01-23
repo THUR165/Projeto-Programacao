@@ -3,7 +3,6 @@
 #include <string.h>
 #include "cadastrarv.h"
 
-
 Venda* preencherVenda(void){          
     
     Venda* vnd;

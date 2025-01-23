@@ -138,7 +138,6 @@ int alterarCliente(const char* nomeArquivo) {
                     default:
                         printf("Opção inválida. Tente novamente.\n");
                 }
-
             } while(opcao_alterar != 0);
 
             //teste de fseek - posicionar cursor nos dados corretos, o teste é 1 ou 0?

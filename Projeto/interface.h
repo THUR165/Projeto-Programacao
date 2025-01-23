@@ -36,15 +36,17 @@
 
 //Telas
 int tela_main();
-void tela_mod_cliente(/*void *clientes, int size*/);
-void tela_mod_func();
-void tela_mod_prod();
-void tela_mod_vendas();
-void tela_info_proj();
-void tela_mod_relat();
+void tela_mod_cliente(void);
+void tela_mod_func(void);
+void tela_mod_prod(void);
+void tela_mod_vendas(void);
+void tela_info_proj(void);
+void tela_mod_relat(void);
+
 
 /*void modificar_cliente(void);
 void excluir_cliente(void);*/
+
 
 /*
 //CRUD para Funcionários
@@ -66,11 +68,11 @@ void modificar_venda(void);
 void cadastrar_venda(void);
 void excluir_venda(void);
 void exibir_venda(void);
-
+*/
 //Relatórios
-void relatorio_produtos(void);
+/*void relatorio_geral_produtos(void);
 void relatorio_funcionarios(void);
 void relatorio_vendas(void);
-void relatorio_cliente(void);
-*/
+void relatorio_cliente(void);*/
+
 #endif

@@ -1,0 +1,16 @@
+Erros atuais:
+erros de exibição em alguns momentos
+
+Notas de Atualização:
+
+As validações não estao funcionando ainda, pois testes estam sendo necessário
+adicionar as validações nos cadastratemento...
+
+Filtros de Relatórios
+Clientes: Cidade e estado, generos ...
+
+vendas: data da venda , produtos vendidos , clintes ativos e inativos, categorias de vendas
+
+struct vendas: cod_de barras, cpf do cliente, preço do produto, data da venda
+valor a ser pago.
+

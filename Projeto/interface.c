@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdlib.h>
 #include "interface.h"
+
 
 const char* arquivoCliente = "clientes.dat";
 const char* arquivoVenda = "vendas.dat";
 const char* arquivoFuncionario = "funcionarios.dat";
 const char* arquivoProduto = "produtos.dat";
-
-
 
 
 int tela_main(void){    
@@ -58,13 +58,13 @@ void tela_mod_cliente(void) {
         printf("===========================================================\n");
         printf("Escolha uma opção: ");
 
-        if (scanf("%d", &op) != 1) {  // Verifica se a entrada é um número
+        if (scanf("%d", &op) != 1) {
             printf("Entrada inválida! Por favor, insira um número.\n");
-            while (getchar() != '\n');  // Limpa o buffer de entrada
+            while (getchar() != '\n');  // Limpa o buffer
             continue;  // Retorna ao início do loop
         }
 
-        if (op >= 0 && op <= 4) {  // Verifica se a opção está no intervalo permitido
+        if (op >= 0 && op <= 4) {
             switch (op) {
                 case 1:
                     cliente = preencherCliente();
@@ -179,6 +179,7 @@ void tela_mod_cliente(void) {
         }
     } while (op != 0);
 }
+
 void tela_mod_vendas(void) {
     Venda* venda;
     //const char* arquivoVenda = "vendas.dat";

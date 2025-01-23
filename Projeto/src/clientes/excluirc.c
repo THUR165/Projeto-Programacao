@@ -64,3 +64,4 @@ int excluirCliente(const char* nomeArquivo){
     free(clntArqv);
     return 1; //sucess
 }
+

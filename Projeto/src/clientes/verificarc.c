@@ -87,13 +87,44 @@ void exibirCliente(Cliente* clnt){
             
             return clientes[i];  // Retorna o cliente encontrado
         }
+=======
+#include "../clientes/cliente.h"
+
+
+// possivel erro nessa função na hr de abrir o arquivo
+
+char* pesqClient(char* cpf) {
+    printf("Digite o CPF do cliente que deseja buscar: ");
+    limparBuffer(); // Certifique-se de limpar o buffer antes da leitura
+    scanf("%14[^\n]", cpf);
+    return cpf;
+}
+
+
+
+
+Cliente* buscarCliente(const char* cpf) {
+    FILE* fp;
+    Cliente* cliente;
+
+    cliente = (Cliente*) malloc(sizeof(Cliente));
+    if (cliente == NULL) {
+        perror("Erro ao alocar memória");
+        return NULL;
+>>>>>>> main
     }
 
-    // Caso o CPF não seja encontrado
-    printf("\nCliente com CPF %s não encontrado.\n", cpf_busca);
+    fp = fopen("cliente.bin", "rb");
+    if (fp == NULL) {
+        perror("Erro ao abrir o arquivo");
+        free(cliente);
+        return NULL;
+    }
 
+<<<<<<< HEAD
     // Retornar um cliente vazio em caso de não encontrado
     Cliente cliente_vazio = {0};  // Inicializa todos os campos com valores padrão
     return cliente_vazio;*/
 
 //}
+

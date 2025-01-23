@@ -3,6 +3,7 @@
 #include <string.h>
 #include "relatorioc.h"
 
+
 void relatorio_geral_clientes(const char* arquivoCliente) {
 
     printf("===========================================================\n");
