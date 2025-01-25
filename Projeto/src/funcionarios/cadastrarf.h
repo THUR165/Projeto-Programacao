@@ -8,8 +8,8 @@
 //struct para funcionario
 typedef struct funcionario {
     char nome[51];
-    char cpf[12];       //12 pq seriam 11 dígitos + 1 para o 0.
-    char data_nascimento[11];
+    char cpf[13];       //12 pq seriam 11 dígitos + 1 para o 0.
+    char data_nascimento[12];
     int status;
 } Funcionario;
 

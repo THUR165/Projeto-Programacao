@@ -12,7 +12,7 @@ typedef struct produto {
     char marca[21];      
     float preco;         
     char categoria[21];
-    char data_validade [11];      
+    char data_validade [12];      
     int status;
 } Produto;
 

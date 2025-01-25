@@ -9,9 +9,9 @@
 typedef struct venda {
     char cod_venda[6];
     char cod_prod[6];
-    char cpf_clnt[12];
-    char cpf_func[12];
-    char data_venda[11];
+    char cpf_clnt[13];
+    char cpf_func[13];
+    char data_venda[12];
 } Venda;
 
 Venda* preencherVenda(void);

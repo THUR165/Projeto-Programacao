@@ -617,6 +617,8 @@ void tela_info_proj(void){
     printf("===========================================================\n");
     printf("=====            Leandro Sergio Da Silva              =====\n");
     printf("=====            Arthur De Medeiros Dantas            =====\n");
+    printf("=====            Juliany Tairis de Oliveira Borges    =====\n");
+    printf("=====             Júlia Lilian Prudêncio da Costa     =====\n");
     printf("===========================================================\n");
     printf("Pressione <ENTER> para continuar\n");
     getchar();

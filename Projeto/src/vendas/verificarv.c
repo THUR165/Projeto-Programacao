@@ -53,7 +53,7 @@ void exibirVenda(Venda* vnd) {
     printf("Código do produto vendido: %s\n", vnd->cod_prod);
     printf("CPF do cliente: %s\n", vnd->cpf_clnt);
     printf("CPF do funcionário: %s\n", vnd->cpf_func);
-    printf("Data da venda: %s\n", vnd->data_venda);
+    //printf("Data da venda: %s\n", vnd->data_venda); /
     getchar();
     printf("\t\tTecle ENTER para continuar...\n\n");
     printf("===========================================================\n");

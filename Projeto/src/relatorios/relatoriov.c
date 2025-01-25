@@ -28,7 +28,7 @@ void relatorio_geral_vendas(const char* arquivoVenda) {
             printf("Código do produto: %s\n", venda->cod_prod);
             printf("CPF do cliente:: %s\n", venda->cpf_clnt);
             printf("CPF do funcionário: %s\n", venda->cpf_func);
-            printf("Data da venda: %s\n", venda->data_venda);
+            //printf("Data da venda: %s\n", venda->data_venda);
             printf("-----------------------------------------------------------\n");
         }
     }
