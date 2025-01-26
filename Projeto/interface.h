@@ -28,6 +28,8 @@
 #include "src/relatorios/relatoriov.h"
 
 void relatorio_clientes_por_status(const char* arquivoCliente, int statusDesejado);
+void relatorio_funcionarios_por_status(const char* arquivoFuncionario, int statusDesejado);
+
 
 
 /* Faltando:

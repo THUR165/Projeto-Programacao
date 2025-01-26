@@ -14,6 +14,7 @@ void relatorio_geral_produtos(const char* arquivoProduto) {
     produto = (Produto*)malloc(sizeof(Produto)); 
     if (produto == NULL) {   //teste de alocação de memória
         perror("Erro de alocação de memória! \n");
+        fclose(fp);
         return;  //falha...
     }
 
@@ -25,7 +26,7 @@ void relatorio_geral_produtos(const char* arquivoProduto) {
         if (produto->status == 1) {
             printf("Nome: %s\n", produto->nome);
             printf("Código de barras: %s\n", produto->cod_barras);
-            printf("Preço: R$ %2.f \n", produto->preco); //float
+            printf("Preço: R$ %.2f \n", produto->preco); //float
             printf("Categoria: %s\n", produto->categoria);
             printf("Marca: %s\n", produto->marca);
             printf("Data de validade: %s\n", produto->data_validade);

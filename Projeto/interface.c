@@ -605,9 +605,34 @@ void tela_mod_relat(void) {
                 relatorio_geral_produtos(arquivoProduto);  
                 break;
             case 4:
-                //menu
-                relatorio_geral_funcionarios(arquivoFuncionario); 
-                break;
+                   do {
+        // Submenu para funcionários
+        printf("\n");
+        printf("===========================================================\n");
+        printf("=====    Relatório de Funcionários Ativos/Inativos    =====\n");
+        printf("===========================================================\n");
+        printf("=====       [1] - Relatório de Funcionários Ativos    =====\n");
+        printf("=====       [2] - Relatório de Funcionários Inativos  =====\n");
+        printf("=====       [0] - Voltar ao menu anterior             =====\n");
+        printf("===========================================================\n");
+        printf("Sua Escolha: --> ");
+
+        if (scanf("%d", &sub_op) != 1) {
+            printf("Entrada inválida! Por favor, insira um número.\n");
+            while (getchar() != '\n');  // Limpa o buffer de entrada
+            continue;
+        }
+        if (sub_op == 1) {
+            printf("\nGerando Relatório de Funcionários Ativos...\n");
+            relatorio_funcionarios_por_status(arquivoFuncionario, 1); 
+        } else if (sub_op == 2) {
+            printf("\nGerando Relatório de Funcionários Inativos...\n");
+            relatorio_funcionarios_por_status(arquivoFuncionario, 0); 
+        } else if (sub_op != 0) {
+            printf("Opção inválida! Tente novamente.\n");
+        }
+    } while (sub_op != 0);
+    break;
             case 0:
                 printf("Saindo...\n");
                 break;
