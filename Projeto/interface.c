@@ -545,6 +545,7 @@ void tela_mod_prod(void) {
 
 void tela_mod_relat(void) {
     int op;
+    int sub_op;
     
     do {
         printf("\n");
@@ -567,9 +568,34 @@ void tela_mod_relat(void) {
         if (op >= 0 && op <= 4){
             switch (op) {
             case 1:
-                //menu...
-                relatorio_geral_clientes(arquivoCliente);  
-                break;
+                    do {
+                        // Submenu para clientes
+                        printf("\n");
+                        printf("===========================================================\n");
+                        printf("=====         Relatório de Clientes Ativos/Inativos      =====\n");
+                        printf("===========================================================\n");
+                        printf("=====         [1] - Relatório de Clientes Ativos         =====\n");
+                        printf("=====         [2] - Relatório de Clientes Inativos       =====\n");
+                        printf("=====         [0] - Voltar ao menu anterior              =====\n");
+                        printf("===========================================================\n");
+                        printf("Sua Escolha: --> ");
+
+                        if (scanf("%d", &sub_op) != 1) {
+                            printf("Entrada inválida! Por favor, insira um número.\n");
+                            while (getchar() != '\n');  // Limpa o buffer de entrada
+                            continue;
+                        }
+                        if (sub_op == 1) {
+                            printf("\nGerando Relatório de Clientes Ativos...\n");
+                            relatorio_clientes_por_status(arquivoCliente, 1); // Status 1 = Ativos
+                        } else if (sub_op == 2) {
+                            printf("\nGerando Relatório de Clientes Inativos...\n");
+                            relatorio_clientes_por_status(arquivoCliente, 0); // Status 0 = Inativos
+                        } else if (sub_op != 0) {
+                            printf("Opção inválida! Tente novamente.\n");
+                        }
+                    } while (sub_op != 0);
+                    break;
             case 2:
                 //menu...
                 relatorio_geral_vendas(arquivoVenda);   

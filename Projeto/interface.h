@@ -27,6 +27,8 @@
 #include "src/relatorios/relatoriop.h"
 #include "src/relatorios/relatoriov.h"
 
+void relatorio_clientes_por_status(const char* arquivoCliente, int statusDesejado);
+
 
 /* Faltando:
 - CRUD para Clientes...
