@@ -29,6 +29,7 @@
 
 void relatorio_clientes_por_status(const char* arquivoCliente, int statusDesejado);
 void relatorio_funcionarios_por_status(const char* arquivoFuncionario, int statusDesejado);
+void relatorio_produtos_por_status(const char* arquivoProduto, int statusDesejado);
 
 
 

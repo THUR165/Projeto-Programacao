@@ -601,9 +601,34 @@ void tela_mod_relat(void) {
                 relatorio_geral_vendas(arquivoVenda);   
                 break;
             case 3:
-                //menu
-                relatorio_geral_produtos(arquivoProduto);  
-                break;
+                   do {
+        printf("\n");
+        printf("===========================================================\n");
+        printf("=====      Relatório de Produtos Ativos/Inativos      =====\n");
+        printf("===========================================================\n");
+        printf("=====        [1] - Relatório de Produtos Ativos       =====\n");
+        printf("=====        [2] - Relatório de Produtos Inativos     =====\n");
+        printf("=====        [0] - Voltar ao menu anterior            =====\n");
+        printf("===========================================================\n");
+        printf("Sua Escolha: --> ");
+
+        if (scanf("%d", &sub_op) != 1) {
+            printf("Entrada inválida! Por favor, insira um número.\n");
+            while (getchar() != '\n');  
+            continue;
+        }
+        if (sub_op == 1) {
+            printf("\nGerando Relatório de Produtos Ativos...\n");
+            relatorio_produtos_por_status(arquivoProduto, 1); 
+        } else if (sub_op == 2) {
+            printf("\nGerando Relatório de Produtos Inativos...\n");
+            relatorio_produtos_por_status(arquivoProduto, 0); 
+        } else if (sub_op != 0) {
+            printf("Opção inválida! Tente novamente.\n");
+        }
+    } while (sub_op != 0);
+    break;
+
             case 4:
                    do {
         // Submenu para funcionários
