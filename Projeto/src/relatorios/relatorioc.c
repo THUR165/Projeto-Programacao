@@ -52,3 +52,43 @@ void relatorio_clientes_por_status(const char* arquivoCliente, int statusDesejad
     free(cliente);
     fclose(fp);
 }
+
+char* get_nome_cliente(const char* arquivoCliente, char cpf_clnt[13]) {
+    FILE* fp = fopen(arquivoCliente, "rb");
+    if (fp == NULL) {
+        perror("Erro ao abrir o arquivo de clientes!");
+        return NULL;
+    }
+
+    Cliente* cliente;
+    cliente = (Cliente*)malloc(sizeof(Cliente));
+    if (cliente == NULL) {   // Teste de alocação de memória
+        perror("Erro de alocação de memória! \n");
+        fclose(fp); // Fecha o arquivo antes de retornar
+        return NULL;
+    }
+
+    char* nome_obtido = NULL;  //recebe nada por enquanto...
+
+    while (fread(cliente, sizeof(Cliente), 1, fp)) {
+        if (strcmp(cliente->cpf, cpf_clnt) == 0) {
+            nome_obtido = (char*)malloc(strlen(cliente->nome) + 1);  //strlen ajusta o tamanho do nome; + 1 para /0
+            if (nome_obtido == NULL) {
+                perror("Erro de alocação para o nome do cliente");
+                free(cliente);
+                fclose(fp);
+                return NULL;
+            } 
+            strcpy(nome_obtido, cliente->nome); //o nome é copiado para nome_obtido
+            break;
+        } 
+    }
+
+    if (nome_obtido == NULL) {
+        printf("Cliente não encontrado!\n"); // caso não encontre...
+    }
+
+    free(cliente);
+    fclose(fp);
+    return nome_obtido; //retorna o nome obtido
+}

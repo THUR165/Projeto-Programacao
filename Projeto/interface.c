@@ -598,7 +598,7 @@ void tela_mod_relat(void) {
                     break;
             case 2:
                 //menu...
-                relatorio_geral_vendas(arquivoVenda);   
+                relatorio_geral_vendas(arquivoVenda, arquivoCliente, arquivoProduto, arquivoFuncionario);   
                 break;
             case 3:
                    do {
@@ -694,7 +694,7 @@ void tela_info_proj(void){
     printf("=====            Leandro Sergio Da Silva              =====\n");
     printf("=====            Arthur De Medeiros Dantas            =====\n");
     printf("=====            Juliany Tairis de Oliveira Borges    =====\n");
-    printf("=====             Júlia Lilian Prudêncio da Costa     =====\n");
+    printf("=====            Júlia Lilian Prudêncio da Costa      =====\n");
     printf("===========================================================\n");
     printf("Pressione <ENTER> para continuar\n");
     getchar();
